@@ -1,0 +1,552 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY knowrob "http://knowrob.org/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY arbi "http://www.arbi.com/ontologies/arbi.owl#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+	<!ENTITY srdl2-comp "http://knowrob.org/kb/srdl2-comp.owl#" >
+]>
+
+<rdf:RDF xmlns="http://knowrob.org/kb/ias_semantic_map.owl#"
+     xml:base="http://knowrob.org/kb/ias_semantic_map.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:arbi="http://www.arbi.com/ontologies/arbi_knowrob.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:srdl2-comp="http://knowrob.org/kb/srdl2-comp.owl#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#">
+    <owl:Ontology rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#">
+        <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+    </owl:Ontology>
+>
+
+
+	<!-- Station -->
+	<owl:NamedIndividual rdf:about="&arbi;PalletizingStation01">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;PStation"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.2500e-01</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.2500e-01</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.2749e-01</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	</owl:NamedIndividual>
+	
+	
+	
+    <owl:NamedIndividual rdf:about="&arbi;LoadingStation01">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;LStation"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.211833</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.58953613</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	</owl:NamedIndividual>
+
+
+    <owl:NamedIndividual rdf:about="&arbi;Grippingzone01">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&knowrob;Zone"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.2500e-01</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.2500e-01</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.2749e-01</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	</owl:NamedIndividual>
+	
+	 <owl:NamedIndividual rdf:about="&arbi;Palletizingzone01">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&knowrob;Zone"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.2500e-01</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.2500e-01</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.2749e-01</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	</owl:NamedIndividual>
+
+
+
+
+    <owl:NamedIndividual rdf:about="&arbi;station1">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <rdf:type rdf:resource="&arbi;ReceiveStation"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.35</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-36.5</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">152</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(GuideMove 1 0)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 152)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1</knowrob:vertexnum>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station2">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <rdf:type rdf:resource="&arbi;ReceiveStation"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">6.34</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-36.5</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">150</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2</knowrob:vertexnum>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station3">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">148</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3</knowrob:vertexnum>
+	    
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station4">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.9</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">145</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4</knowrob:vertexnum>
+	</owl:NamedIndividual>	.
+	
+	<owl:NamedIndividual rdf:about="&arbi;station143">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">100</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 26)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 138)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">143</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station146">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">142</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">146</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+		
+	<owl:NamedIndividual rdf:about="&arbi;station10">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-18.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">102</knowrob:radius>	    
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">102</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station11">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-16.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">103</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">11</knowrob:vertexnum>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station12">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-14.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">104</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">12</knowrob:vertexnum>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station13">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-12.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">105</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">13</knowrob:vertexnum>
+	    
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;station14">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-10.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">106</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">14</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station15">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-8.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">107</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">15</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station16">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-2.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">111</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">16</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station17">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">112</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">17</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station18">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">113</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">18</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station19">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">114</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station20">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">115</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 20)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 115)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+		
+	<owl:NamedIndividual rdf:about="&arbi;station21">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">7.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">116</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">21</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+			
+	<owl:NamedIndividual rdf:about="&arbi;station22">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">117</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">22</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station23">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">11.6</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">118</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">23</knowrob:vertexnum>
+	</owl:NamedIndividual>	
+	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station24">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-18.9</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">140</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">24</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station25">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-16.9</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">139</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">25</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	<owl:NamedIndividual rdf:about="&arbi;station26">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-13.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">138</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 26)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 138)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">26</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+		
+	<owl:NamedIndividual rdf:about="&arbi;station27">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-11.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">137</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">27</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	<owl:NamedIndividual rdf:about="&arbi;station28">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-8.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">136</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">28</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station29">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-6.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">135</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">29</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	<owl:NamedIndividual rdf:about="&arbi;station30">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">131</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station31">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">130</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">31</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station32">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">7.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">129</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+			
+	<owl:NamedIndividual rdf:about="&arbi;station33">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">128</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	<owl:NamedIndividual rdf:about="&arbi;station34">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">12.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">127</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">34</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station35">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">14.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">126</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">35</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station36">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">17.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">125</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">36</knowrob:vertexnum>
+	</owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:about="&arbi;station37">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">124</knowrob:preparationVertex>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">37</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	
+	<owl:NamedIndividual rdf:about="&arbi;station500">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;ChargingStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">157</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(GuideMove 500 1)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(GuideMove 157 0)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	<owl:NamedIndividual rdf:about="&arbi;station501">
+	    <rdf:type rdf:resource="&knowrob;Point3D"/>
+	    <rdf:type rdf:resource="&arbi;ChargingStation"/>
+	    <rdf:type rdf:resource="&arbi;Station"/>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</knowrob:xCoord>
+	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.7</knowrob:yCoord>
+	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
+	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
+	    <knowrob:preparationVertex rdf:datatype="&xsd;double">158</knowrob:preparationVertex>
+	    <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(GuideMove 501 1)"</knowrob:moveTypeIn>
+	    <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(GuideMove 158 0)"</knowrob:moveTypeOut>
+	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">501</knowrob:vertexnum>
+	</owl:NamedIndividual>			
+	
+	
+	
+		
+	
+
+
+
+	<!-- box01 -->
+
+	
+	<owl:NamedIndividual rdf:about="&arbi;rotMat3D_box1">
+		<rdf:type rdf:resource="&arbi;RotationMatrix3D"/>
+
+		<knowrob:m00 rdf:datatype="&xsd;double">1.0</knowrob:m00>
+		<knowrob:m01 rdf:datatype="&xsd;double">0.0</knowrob:m01>
+		<knowrob:m02 rdf:datatype="&xsd;double">0.014417057</knowrob:m02>
+		<knowrob:m03 rdf:datatype="&xsd;double">15.0</knowrob:m03>
+
+		<knowrob:m10 rdf:datatype="&xsd;double">0.0</knowrob:m10>
+		<knowrob:m11 rdf:datatype="&xsd;double">1.0</knowrob:m11>
+		<knowrob:m12 rdf:datatype="&xsd;double">6.0358254e-4</knowrob:m12>
+		<knowrob:m13 rdf:datatype="&xsd;double">3.0</knowrob:m13>
+
+		<knowrob:m20 rdf:datatype="&xsd;double">0.0</knowrob:m20>
+		<knowrob:m21 rdf:datatype="&xsd;double">0.0</knowrob:m21>
+		<knowrob:m22 rdf:datatype="&xsd;double">-139.99998</knowrob:m22>
+		<knowrob:m23 rdf:datatype="&xsd;double">12.0</knowrob:m23>
+
+		<knowrob:m30 rdf:datatype="&xsd;double">0.0</knowrob:m30>
+		<knowrob:m31 rdf:datatype="&xsd;double">0.0</knowrob:m31>
+		<knowrob:m32 rdf:datatype="&xsd;double">0.0</knowrob:m32>
+		<knowrob:m33 rdf:datatype="&xsd;double">1.0</knowrob:m33>
+	</owl:NamedIndividual>
+	
+
+</rdf:RDF>

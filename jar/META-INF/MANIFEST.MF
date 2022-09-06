@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+Rsrc-Class-Path: ./ activemq-client-5.13.3.jar activemq-broker-5.13.3.ja
+ r activemq-console-5.13.3.jar activemq-jaas-5.13.3.jar activemq-kahadb-
+ store-5.13.3.jar activemq-openwire-legacy-5.13.3.jar activemq-protobuf-
+ 1.1.jar activemq-spring-5.13.3.jar activemq-web-5.13.3.jar commons-pool
+ 2-2.4.2.jar geronimo-j2ee-management_1.1_spec-1.0.1.jar geronimo-jms_1.
+ 1_spec-1.1.1.jar geronimo-jta_1.0.1B_spec-1.0.1.jar guava-18.0.jar hawt
+ buf-1.11.jar jcl-over-slf4j-1.7.13.jar LatencyUtils-2.0.3.jar lettuce-4
+ .2.1.Final.jar netty-buffer-4.0.37.Final.jar netty-codec-4.0.37.Final.j
+ ar netty-common-4.0.37.Final.jar netty-handler-4.0.37.Final.jar netty-t
+ ransport-4.0.37.Final.jar rxjava-1.1.6.jar slf4j-api-1.7.13.jar activem
+ q-stomp-5.14.0.jar jeromq-0.4.0.jar activemq-jaas-5.7.0.jar airline-0.6
+ .jar apollo-amqp-1.7.1.jar apollo-bdb-1.7.1.jar apollo-boot.jar apollo-
+ broker-1.7.1.jar apollo-cli-1.7.1.jar apollo-dto-1.7.1.jar apollo-jmx-1
+ .7.1.jar apollo-leveldb-1.7.1.jar apollo-mqtt-1.7.1.jar apollo-openwire
+ -1.7.1.jar apollo-selector-1.7.1.jar apollo-stomp-1.7.1.jar apollo-util
+ -1.7.1.jar apollo-web-1.7.1.jar asm-3.1.jar commons-codec-1.1.jar commo
+ ns-lang-2.1.jar gentlyweb-utils-1.5.jar guava-12.0.jar hawtbuf-1.10.jar
+  hawtbuf-proto-1.10.jar hawtdispatch-1.20.jar hawtdispatch-scala-1.20.j
+ ar hawtdispatch-transport-1.20.jar hawtjni-runtime-1.9.jar jackson-anno
+ tations-2.1.0.jar jackson-core-2.1.0.jar jackson-databind-2.1.0.jar jac
+ kson-jaxrs-json-provider-2.1.0.jar jansi-1.11.jar jasypt-1.6.jar javax.
+ inject-1.jar jersey-core-1.7.jar jersey-server-1.7.jar jetty-all-server
+ -8.1.5.v20120716.jar jolokia-core-1.1.1.jar josql-1.5.jar json-simple-1
+ .1.jar jsp-api-2.1.jar leveldb-0.6.jar leveldb-api-0.6.jar leveldbjni-1
+ .8.jar leveldbjni-linux32-1.8.jar leveldbjni-linux64-1.8.jar leveldbjni
+ -osx-1.8.jar leveldbjni-win32-1.8.jar leveldbjni-win64-1.8.jar log4j-1.
+ 2.14.jar mqtt-client-1.9.jar proton-0.3.0-fuse-2.jar proton-api-0.3.0-f
+ use-2.jar proton-hawtdispatch-0.3.0-fuse-2.jar scala-library-2.10.0.jar
+  scalate-core_2.10-1.6.1.jar scalate-util_2.10-1.6.1.jar slf4j-api-1.6.
+ 1.jar slf4j-log4j12-1.6.1.jar snakeyaml-1.7.jar snappy-0.2.jar snappy-j
+ ava-1.0.3.jar swagger-annotations_2.10.0-RC5-1.2.0.jar swagger-core_2.1
+ 0.0-RC5-1.2.0.jar swagger-jaxrs_2.10.0-RC5-1.2.0.jar jetty-all-9.2.22.v
+ 20170606.jar javax.jar activation-1.1.jar javaee-api-8.0.1-b5.jar javax
+ .mail-1.6.2.jar javax.xml.bind.jar
+Rsrc-Main-Class: kr.ac.uos.ai.arbi.ServerLauncher
+Class-Path: .
+
