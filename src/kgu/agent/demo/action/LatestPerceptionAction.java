@@ -38,8 +38,8 @@ public class LatestPerceptionAction implements ActionBody {
 	int[] visualRobotLefRightFingerPerceptionInterval = new int[3];
 	int jointPerceptionInterval = 0;
 
-	int removeTime = 10;
-	int removeInterval = 10;
+	int removeTime = 2;
+	int removeInterval = 2;
 
 	static List<String> oSubject = new ArrayList<String>();
 	static List<String> oProperty = new ArrayList<String>();
@@ -413,8 +413,8 @@ public class LatestPerceptionAction implements ActionBody {
 	             }                  
 
 	            String direction = gl.getExpression(1).asValue().stringValue();
-	            String x = gl.getExpression(2).asValue().stringValue();
-	            String y = gl.getExpression(3).asValue().stringValue();
+	            String x = "0";
+	            String y = "0";
 	        
 	      
 	          visualRobotBodyPerceptionCount++;
@@ -817,8 +817,14 @@ public class LatestPerceptionAction implements ActionBody {
 					oIdInd = 0;
 				} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_02")) {
 					ID = "pallet_02";
-					oIdInd = 1;
-				} 
+					oIdInd = 1;													
+				}  else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_03")) {
+					ID = "pallet_03";
+					oIdInd = 2;
+				} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_04")) {
+					ID = "pallet_04";
+					oIdInd = 3;
+				}
 		
 				subVisualObjectPerceptionCount = oIdCount[oIdInd][1]++;
 				visualObjectPerceptionCount = subVisualObjectPerceptionCount;

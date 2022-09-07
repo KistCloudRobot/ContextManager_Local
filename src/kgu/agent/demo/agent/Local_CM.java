@@ -71,7 +71,9 @@ public class Local_CM extends ArbiAgent {
 
 			@Override			
 			public void onNotify(String data) {
-				//System.out.println("OnNotify_start");
+				// print log
+				if(data.contains("rackAt") || data.contains("cargoAt")) System.out.println("OnNotify_start : " + data);
+				
 				if (!Subscripting_start) {
 					System.out.println("Subscripting_start");
 					Subscripting_start = true;
@@ -126,9 +128,9 @@ public class Local_CM extends ArbiAgent {
 //					onQuery(sender, queryGL);									
 //					sleep(300);	
 //							
-//					queryGL = "(context (onRack $A $B))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);			
+					queryGL = "(context (cargoOn $A $B))";
+					onQuery(sender, queryGL);									
+					sleep(300);			
 //					
 //					queryGL = "(context (emptyStation $A))";
 //					onQuery(sender, queryGL);									
@@ -263,13 +265,14 @@ public class Local_CM extends ArbiAgent {
 		String robotID;
 		if(args.length == 0) {
 //			brokerAddress = "tcp://127.0.0.1:61319";
-			brokerAddress = "tcp://127.0.0.1:61318";
+			brokerAddress = "tcp://172.16.165.141:61316";
 			robotID = "Local";	
 		} else {
 			robotID = args[0];
 			brokerAddress = args[1];
 		}
 		Local_CM agent = new Local_CM(brokerAddress);
+//		agent.onQuery("testTM", "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#station10\" $Rack))");
 	}
 	
 	
