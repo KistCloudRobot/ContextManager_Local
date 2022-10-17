@@ -30,6 +30,7 @@ import kgu.agent.demo.actionArgument.TripleCountArgument;
 import kgu.agent.demo.actionArgument.WorkingMemory_MonitorsArgument;
 import kgu.agent.demo.paser.ContextMonitorParser;
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.agent.logger.AgentAction;
@@ -83,9 +84,6 @@ public class MOS extends ArbiAgent {
 	public static int speechCount = 0;
 	public static int HumanCount = 0;
 	public static int perceptionCount = 0;
-	
-	public static int DC_BROKER_TYPE = Broker.ZEROMQ;
-	public static int AA_BROKER_TYPE = Broker.ZEROMQ;
 
 	public MOS() {
 
@@ -93,7 +91,7 @@ public class MOS extends ArbiAgent {
 
 	public void executeAgent() {
 
-		ArbiAgentExecutor.execute(JMS_BROKER_URL, MOS_ADDRESS, this, AA_BROKER_TYPE); //arbi based code
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, MOS_ADDRESS, this, BrokerType.ZEROMQ); //arbi based code
 
 		System.out.println("Agent Executed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		
@@ -155,7 +153,7 @@ public class MOS extends ArbiAgent {
 			}
 		};
 
-		dc.connect(JMS_BROKER_URL, DC_URL, DC_BROKER_TYPE);
+		dc.connect(JMS_BROKER_URL, DC_URL, BrokerType.ZEROMQ);
 
 		System.out.println("======Start MOS======");
 

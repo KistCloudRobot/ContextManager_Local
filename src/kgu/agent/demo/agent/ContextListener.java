@@ -1,6 +1,7 @@
 package kgu.agent.demo.agent;
 
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
@@ -40,14 +41,14 @@ public class ContextListener extends ArbiAgent {
 	}	
 
 	public void executeAgent() {
-		ArbiAgentExecutor.execute(JMS_BROKER_URL, CL_ADDRESS, this, Broker.ZEROMQ);
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, CL_ADDRESS, this, BrokerType.ZEROMQ);
 	}
 	
 
 	@Override
 	public void onStart() {
 		ds = new DataSource();
-		ds.connect("tcp://localhost:61616", "dc://CL", Broker.ZEROMQ);
+		ds.connect("tcp://localhost:61616", "dc://CL", BrokerType.ZEROMQ);
 
 		System.out.println("======Start Dummy_Listener_Manager======");
 		

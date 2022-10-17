@@ -2,6 +2,7 @@ package kgu.agent.demo.agent;
 
 import kgu.agent.demo.actionArgument.NotifyArgument;
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.agent.logger.AgentAction;
@@ -33,7 +34,7 @@ public class ContextMonitor extends ArbiAgent {
 
 	public void executeAgent() {
 
-		ArbiAgentExecutor.execute(JMS_BROKER_URL, CM_MONITOR_ADDRESS, this, Broker.ZEROMQ);
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, CM_MONITOR_ADDRESS, this, BrokerType.ZEROMQ);
 //		NotifyAction action = new NotifyAction();
 //		notifyAction = new AgentAction("sendLogNotify", action);
 //		LoggerManager.getInstance().registerAction("notify", notifyAction, LogTiming.Later);
@@ -70,7 +71,7 @@ public class ContextMonitor extends ArbiAgent {
 	@Override
 	public void onStart() {
 		DataSource dc = new DataSource();
-		dc.connect("tcp://localhost:61616", "dc://CMM", Broker.ZEROMQ);
+		dc.connect("tcp://localhost:61616", "dc://CMM", BrokerType.ZEROMQ);
 	}
 
 }

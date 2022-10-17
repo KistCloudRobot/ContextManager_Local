@@ -30,6 +30,7 @@ import kgu.agent.demo.actionArgument.TripleCountArgument;
 import kgu.agent.demo.actionArgument.WorkingMemory_MonitorsArgument;
 import kgu.agent.demo.paser.ContextMonitorParser;
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.agent.logger.AgentAction;
@@ -77,9 +78,6 @@ public class ContextManager extends ArbiAgent {
 	public static int speechCount = 0;
 	public static int HumanCount = 0;
 	public static int perceptionCount = 0;
-	
-	public static int DC_BROKER_TYPE = Broker.ZEROMQ;
-	public static int AA_BROKER_TYPE = Broker.ZEROMQ;
 
 	public ContextManager() {
 
@@ -87,7 +85,7 @@ public class ContextManager extends ArbiAgent {
 
 	public void executeAgent() {
 
-		ArbiAgentExecutor.execute(JMS_BROKER_URL, CM_ADDRESS, this, AA_BROKER_TYPE); //arbi 기반으로 CM시작 코드
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, CM_ADDRESS, this, BrokerType.ZEROMQ); //arbi 기반으로 CM시작 코드
 
 		System.out.println("Agent Executed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		
@@ -387,7 +385,7 @@ public class ContextManager extends ArbiAgent {
 			}
 		};
 
-		dc.connect(JMS_BROKER_URL, DC_URL, DC_BROKER_TYPE);
+		dc.connect(JMS_BROKER_URL, DC_URL, BrokerType.ZEROMQ);
 
 		// dc.subscribe(rule);
 		System.out.println("======Start Context_Manager======");

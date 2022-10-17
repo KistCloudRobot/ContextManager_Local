@@ -1179,7 +1179,7 @@ rackOn(Rack, Station):-
 emptyStoringStation(Station):-
      
       rdfs_individual_of(Station, arbi: 'StoringStation'), 
-      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Rack')), Objects),
+      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
       foreach(member(O,Objects), not(rackOn(O, Station))).
       
 idleLiftRack(Rack):-

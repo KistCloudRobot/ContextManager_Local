@@ -2,6 +2,7 @@ package kgu.agent.demo;
 
 
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
@@ -24,7 +25,7 @@ public class test2 extends ArbiAgent {
 	}
 
 	public void executeAgent() {
-		ArbiAgentExecutor.execute("tcp://127.0.0.1:61616", "test2", this, Broker.ZEROMQ); //arbi 기반으로 CM시작 코드
+		ArbiAgentExecutor.execute("tcp://127.0.0.1:61616", "test2", this, BrokerType.ZEROMQ); //arbi 기반으로 CM시작 코드
 		System.out.println("Agent Executed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		
 	}
@@ -142,7 +143,7 @@ public class test2 extends ArbiAgent {
 			}
 		};
 
-		dc.connect("tcp://127.0.0.1:61616", "testDB", Broker.ZEROMQ);
+		dc.connect("tcp://127.0.0.1:61616", "testDB", BrokerType.ZEROMQ);
 
 		// dc.subscribe(rule);
 

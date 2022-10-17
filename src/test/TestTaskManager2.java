@@ -4,6 +4,7 @@ package test;
 import java.util.Scanner;
 
 import kr.ac.uos.ai.arbi.Broker;
+import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
@@ -43,7 +44,7 @@ public class TestTaskManager2 extends ArbiAgent {
 	}
 
 	public void executeAgent() {
-		ArbiAgentExecutor.execute(JMS_BROKER_URL, TM_ADDRESS, this, Broker.ZEROMQ);
+		ArbiAgentExecutor.execute(JMS_BROKER_URL, TM_ADDRESS, this, BrokerType.ZEROMQ);
 	}
 
 	@Override
@@ -82,7 +83,7 @@ public class TestTaskManager2 extends ArbiAgent {
 	@Override
 	public void onStart() {
 		DataSource dc = new DataSource();
-		dc.connect("tcp://localhost:61616", "dc://TM", Broker.ZEROMQ);
+		dc.connect("tcp://localhost:61616", "dc://TM", BrokerType.ZEROMQ);
 
 		System.out.println("======Start Dummy_Task_Manager======");
 
