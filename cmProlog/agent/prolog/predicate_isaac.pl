@@ -88,8 +88,11 @@
     moveTypeOut/2,
     faceToFace/2,
     nearBy/2,
+    nearBy2/3,
+    nearBy3/3,
     deadLock/2,
-    hwanSong/4
+    hwanSong/4,
+    stationType/2
     ]).
 
 set([], []).
@@ -1185,9 +1188,8 @@ emptyStoringStation(Station):-
 idleLiftRack(Rack):-
       rdfs_individual_of(Rack, knowrob: 'Pallet'), 
       findall(Object,  (rdfs_individual_of(Object, knowrob: 'Box')), Objects),
-      foreach(member(O,Objects), not(cargoOn(O, Rack))),    
-	  rackOn(Rack, Station),
-	  rdfs_individual_of(Station, arbi: 'StoringStation').
+      foreach(member(O,Objects), not(cargoOn(O, Rack))).    
+
 
             
 cargoOnStoringStation(Cargo):-
@@ -1287,10 +1289,76 @@ nearBy(Robot1, Robot2):-
        
        Distance = sqrt((P1X-S1X)**2 + (P1Y-S1Y)**2),
        Distance < 10.
+       
+nearBy2(Robot1, Robot2, Distance):-
+   	   %rdfs_individual_of(Robot1, knowrob: 'Robot'),
+       %rdfs_individual_of(Robot2, knowrob: 'Robot'),
+       
+       currentRobotBodyPerception(Robot1, CurrentPerception1),
+       currentRobotBodyPerception(Robot2, CurrentPerception2),
+       not(Robot1 = Robot2),
+       rdf(CurrentPerception1, knowrob:eventOccursAt, Object_Matrix1),
+       rdf(Object_Matrix1,'http://knowrob.org/kb/knowrob.owl#m03',literal(type(_,P1x))),atom_to_term(P1x,P1X,_),
+       rdf(Object_Matrix1,'http://knowrob.org/kb/knowrob.owl#m13',literal(type(_,P1y))),atom_to_term(P1y,P1Y,_),
+       Pose = [P1X, P1Y],
+     
+       rdf(CurrentPerception2, knowrob:eventOccursAt, Object_Matrix2),
+       rdf(Object_Matrix2,'http://knowrob.org/kb/knowrob.owl#m03',literal(type(_,S1x))),atom_to_term(S1x,S1X,_),
+       rdf(Object_Matrix2,'http://knowrob.org/kb/knowrob.owl#m13',literal(type(_,S1y))),atom_to_term(S1y,S1Y,_),
+       Pose2 = [S1X, S1Y],
+       
+       Distance = sqrt((P1X-S1X)**2 + (P1Y-S1Y)**2),
+       Distance < 3.
+       
+nearBy3(Robot1, Robot2, Distance):-
+   	   %rdfs_individual_of(Robot1, knowrob: 'Robot'),
+       %rdfs_individual_of(Robot2, knowrob: 'Robot'),
+       
+       currentRobotBodyPerception(Robot1, CurrentPerception1),
+       currentRobotBodyPerception(Robot2, CurrentPerception2),
+       not(Robot1 = Robot2),
+       rdf(CurrentPerception1, knowrob:eventOccursAt, Object_Matrix1),
+       rdf(Object_Matrix1,'http://knowrob.org/kb/knowrob.owl#m03',literal(type(_,P1x))),atom_to_term(P1x,P1X,_),
+       rdf(Object_Matrix1,'http://knowrob.org/kb/knowrob.owl#m13',literal(type(_,P1y))),atom_to_term(P1y,P1Y,_),
+       Pose = [P1X, P1Y],
+     
+       rdf(CurrentPerception2, knowrob:eventOccursAt, Object_Matrix2),
+       rdf(Object_Matrix2,'http://knowrob.org/kb/knowrob.owl#m03',literal(type(_,S1x))),atom_to_term(S1x,S1X,_),
+       rdf(Object_Matrix2,'http://knowrob.org/kb/knowrob.owl#m13',literal(type(_,S1y))),atom_to_term(S1y,S1Y,_),
+       Pose2 = [S1X, S1Y],
+       
+       Distance = sqrt((P1X-S1X)**2 + (P1Y-S1Y)**2),
+       Distance > 3,
+       Distance < 5.
+       
 
 deadLock(Robot1, Robot2):-
        nearBy(Robot1, Robot2),
        faceToFace(Robot1, Robot2).
+       
+%stationType(Station, StationType):-
+%	rdfs_individual_of(Station, arbi: 'Station'),
+%	rdf(Station, arbi:stationType, literal(type(_,V1x))),atom_to_term(V1x,V1X,_),
+%	StationType = V1X.
+	
+stationType(Station, StationType):-
+	rdfs_individual_of(Station, arbi: 'Station'),
+	rdf(Station, knowrob:stationType, literal(type(_,V1x))),atom_to_term(V1x,V1X,_),
+	StationType = V1X.
+	
+%	stationType(Station):-
+%	rdfs_individual_of(Station, arbi: 'Station').
+
+
+
+	
+
+
+
+
+
+
+
 
 
 
