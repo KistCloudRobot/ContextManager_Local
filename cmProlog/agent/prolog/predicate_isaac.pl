@@ -1187,9 +1187,8 @@ emptyStoringStation(Station):-
       
 idleLiftRack(Rack):-
       rdfs_individual_of(Rack, knowrob: 'Pallet'), 
-      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Box')), Objects),
-      foreach(member(O,Objects), not(cargoOn(O, Rack))).    
-
+      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Box')), Objects),      
+      foreach(member(O,Objects), not(cargoOn(O, Rack))).
 
             
 cargoOnStoringStation(Cargo):-
@@ -1197,7 +1196,7 @@ cargoOnStoringStation(Cargo):-
 	  rackOn(Rack, Station),
 	  rdfs_individual_of(Station, arbi: 'StoringStation'),
 	  cargoOn(Cargo, Rack).
-
+	  
 
 cargoOn(Box, Rack):-
       rdfs_individual_of(Box, knowrob: 'Box'),

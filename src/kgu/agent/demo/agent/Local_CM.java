@@ -122,16 +122,16 @@ public class Local_CM extends ArbiAgent {
 //					sleep(300);
 //
 					queryGL = "(context (idleLiftRack $A))";
-					onQuery(sender, queryGL);									
-					sleep(300);
+//					onQuery(sender, queryGL);									
+//					sleep(300);
 //					
 //					queryGL = "(context (onStation $A \"http://www.arbi.com/ontologies/arbi.owl#station1\"))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);	
 //							
-					queryGL = "(context (cargoOn $A $B))";
-					onQuery(sender, queryGL);									
-					sleep(300);			
+//					queryGL = "(context (cargoOn $A $B))";
+//					onQuery(sender, queryGL);									
+//					sleep(300);			
 //					
 //					queryGL = "(context (emptyStation $A))";
 //					onQuery(sender, queryGL);									
@@ -266,7 +266,8 @@ public class Local_CM extends ArbiAgent {
 		String robotID;
 		if(args.length == 0) {
 //			brokerAddress = "tcp://127.0.0.1:61319";
-			brokerAddress = "tcp://172.16.165.141:61316";
+			brokerAddress = "tcp://192.168.100.10:61316";
+//			brokerAddress = "tcp://172.16.165.141:61316";
 			robotID = "Local";	
 		} else {
 			robotID = args[0];
