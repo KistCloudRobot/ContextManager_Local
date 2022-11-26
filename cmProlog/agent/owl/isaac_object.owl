@@ -134,11 +134,7 @@
 	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
 </rdf:Description>	
 
-<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_06">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
-	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
-</rdf:Description>	
+
 
 <rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_01">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
