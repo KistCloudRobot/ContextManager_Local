@@ -824,8 +824,11 @@ public class LatestPerceptionAction implements ActionBody {
 				} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_04")) {
 					ID = "pallet_04";
 					oIdInd = 3;
+				}  else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_05")) {
+					ID = "pallet_05";
+					oIdInd = 4;
+				
 				}
-		
 				subVisualObjectPerceptionCount = oIdCount[oIdInd][1]++;
 				visualObjectPerceptionCount = subVisualObjectPerceptionCount;
 

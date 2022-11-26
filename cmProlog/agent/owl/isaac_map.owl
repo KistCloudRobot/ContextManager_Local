@@ -100,7 +100,7 @@
 	
 	<owl:NamedIndividual rdf:about="&arbi;station3">
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
-	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
 	    <rdf:type rdf:resource="&arbi;Station"/>
 	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</knowrob:xCoord>
 	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
@@ -114,7 +114,7 @@
 	
 	<owl:NamedIndividual rdf:about="&arbi;station4">
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
-	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
 	    <rdf:type rdf:resource="&arbi;Station"/>
 	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.9</knowrob:xCoord>
 	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
