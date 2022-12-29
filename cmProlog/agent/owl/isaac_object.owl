@@ -134,6 +134,31 @@
 	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
 </rdf:Description>	
 
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_06">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_07">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_08">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_09">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_10">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
 
 
 <rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_01">
@@ -148,7 +173,36 @@
 	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
 </rdf:Description>	
 
-
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_03">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_04">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_05">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_06">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_07">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_08">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+</rdf:Description>	
 
 
 <!--  -->

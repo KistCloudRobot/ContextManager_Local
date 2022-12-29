@@ -827,8 +827,33 @@ public class LatestPerceptionAction implements ActionBody {
 				}  else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_05")) {
 					ID = "pallet_05";
 					oIdInd = 4;
-				
+		
+				} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_06")) {
+					ID = "pallet_06";
+					oIdInd = 5;
+		
+				}else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_07")) {
+					ID = "pallet_07";
+					oIdInd = 6;
+		
+				}else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_08")) {
+					ID = "pallet_08";
+					oIdInd = 7;
+		
+				}else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_09")) {
+					ID = "pallet_09";
+					oIdInd = 8;
+		
+				}else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_10")) {
+					ID = "pallet_10";
+					oIdInd = 9;
+		
+				}else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#pallet_11")) {
+					ID = "pallet_11";
+					oIdInd = 10;
+		
 				}
+				
 				subVisualObjectPerceptionCount = oIdCount[oIdInd][1]++;
 				visualObjectPerceptionCount = subVisualObjectPerceptionCount;
 
@@ -956,6 +981,27 @@ public class LatestPerceptionAction implements ActionBody {
 			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_02")) {
 				ID = "bin_02";
 				oIdInd = 1;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_03")) {
+				ID = "bin_03";
+				oIdInd = 2;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_04")) {
+				ID = "bin_04";
+				oIdInd = 3;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_05")) {
+				ID = "bin_05";
+				oIdInd = 4;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_06")) {
+				ID = "bin_06";
+				oIdInd = 5;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_07")) {
+				ID = "bin_07";
+				oIdInd = 6;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_08")) {
+				ID = "bin_08";
+				oIdInd = 7;
+			}  else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_09")) {
+				ID = "bin_09";
+				oIdInd = 8;
 			} 
 	
 			subVisualObjectPerceptionCount = oIdCount[oIdInd][1]++;
