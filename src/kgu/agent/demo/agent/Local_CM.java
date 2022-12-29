@@ -60,12 +60,14 @@ public class Local_CM extends ArbiAgent {
 	public static  String CONTEXTMANAGER_ADRESS = "agent://www.arbi.com/ContextManager";
 	public static  String TASKMANAGER_ADDRESS = "agent://www.arbi.com/TaskManager";
 	public static String brokerAddress;
+	private final int brokerPort;
 	LatestPerceptionAction action8;
 	DataSource ds;
 	
-	public Local_CM(String brokerAddress) {
+	public Local_CM(String brokerAddress, int brokerPort) {
 		this.brokerAddress = brokerAddress;
-		ArbiAgentExecutor.execute(brokerAddress, CONTEXTMANAGER_ADRESS, this, BrokerType.ZEROMQ);
+		this.brokerPort = brokerPort;
+		ArbiAgentExecutor.execute(brokerAddress,brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ZEROMQ);
 		init_prolog();
 		ds = new DataSource(){
 			boolean Subscripting_start = false;
@@ -159,7 +161,7 @@ public class Local_CM extends ArbiAgent {
 		action8 = new LatestPerceptionAction();
 		latestPerceptionAction = new AgentAction("RobotContext", action8);
 		LoggerManager.getInstance().registerAction(latestPerceptionAction, LogTiming.Later);
-		ds.connect(brokerAddress, "ds://www.arbi.com/ContextManager", BrokerType.ZEROMQ);
+		ds.connect(brokerAddress, brokerPort, "ds://www.arbi.com/ContextManager", BrokerType.ZEROMQ);
 		String subscribeStatement = "(rule (fact (context $context)) --> (notify (context $context)))";
 		ds.subscribe(subscribeStatement);
 //		String subscriptionID = ds.subscribe("(rule (fact (context (robotAt $robotID $x $y))) --> (notify (robotAt $robotID $x $y)))");
@@ -264,16 +266,18 @@ public class Local_CM extends ArbiAgent {
 	public static void main(String[] args) {
 		String brokerAddress;
 		String robotID;
+		int brokerPort = 0;
 		if(args.length == 0) {
-			brokerAddress = "tcp://127.0.0.1:61316";
+			brokerAddress = "127.0.0.1";
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
+			brokerPort = 61316;
 			robotID = "Local";	
 		} else {
 			robotID = args[0];
 			brokerAddress = args[1];
 		}
-		Local_CM agent = new Local_CM(brokerAddress);
+		Local_CM agent = new Local_CM(brokerAddress, brokerPort);
 //		agent.onQuery("testTM", "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#station10\" $Rack))");
 	}
 	
