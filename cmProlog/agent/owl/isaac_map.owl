@@ -100,7 +100,7 @@
 	
 	<owl:NamedIndividual rdf:about="&arbi;station3">
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
-	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
 	    <rdf:type rdf:resource="&arbi;Station"/>
 	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</knowrob:xCoord>
 	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
@@ -108,13 +108,13 @@
 	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
 	    <knowrob:preparationVertex rdf:datatype="&xsd;double">148</knowrob:preparationVertex>
 	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3</knowrob:vertexnum>
-	    <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"StoringStation"</knowrob:stationType>
+	    <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"ReleaseStation"</knowrob:stationType>
 	    
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:about="&arbi;station4">
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
-	    <rdf:type rdf:resource="&arbi;StoringStation"/>
+	    <rdf:type rdf:resource="&arbi;ReleaseStation"/>
 	    <rdf:type rdf:resource="&arbi;Station"/>
 	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.9</knowrob:xCoord>
 	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-33.7</knowrob:yCoord>
@@ -122,7 +122,7 @@
 	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
 	    <knowrob:preparationVertex rdf:datatype="&xsd;double">145</knowrob:preparationVertex>
 	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4</knowrob:vertexnum>
-	    <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"StoringStation"</knowrob:stationType>
+	    <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"ReleaseStation"</knowrob:stationType>
 	    
 	</owl:NamedIndividual>	.
 	
