@@ -953,7 +953,61 @@ public class LatestPerceptionAction implements ActionBody {
 			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_02")) {
 				ID = "bin_02";
 				oIdInd = 1;
-			} 
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_03")) {
+				ID = "bin_03";
+				oIdInd = 2;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_04")) {
+				ID = "bin_04";
+				oIdInd = 3;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_05")) {
+				ID = "bin_05";
+				oIdInd = 4;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_06")) {
+				ID = "bin_06";
+				oIdInd = 5;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_07")) {
+				ID = "bin_07";
+				oIdInd = 6;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_08")) {
+				ID = "bin_08";
+				oIdInd = 7;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_09")) {
+				ID = "bin_09";
+				oIdInd = 8;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_10")) {
+				ID = "bin_10";
+				oIdInd = 9;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_11")) {
+				ID = "bin_11";
+				oIdInd = 10;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_12")) {
+				ID = "bin_12";
+				oIdInd = 11;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_13")) {
+				ID = "bin_13";
+				oIdInd = 12;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_14")) {
+				ID = "bin_14";
+				oIdInd = 13;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_15")) {
+				ID = "bin_15";
+				oIdInd = 14;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_16")) {
+				ID = "bin_16";
+				oIdInd = 15;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_17")) {
+				ID = "bin_17";
+				oIdInd = 16;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_18")) {
+				ID = "bin_18";
+				oIdInd = 17;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_19")) {
+				ID = "bin_19";
+				oIdInd = 18;
+			} else if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_20")) {
+				ID = "bin_20";
+				oIdInd = 19;
+			}
 	
 			subVisualObjectPerceptionCount = oIdCount[oIdInd][1]++;
 			visualObjectPerceptionCount = subVisualObjectPerceptionCount;
