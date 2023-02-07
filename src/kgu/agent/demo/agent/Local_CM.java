@@ -67,7 +67,7 @@ public class Local_CM extends ArbiAgent {
 	public Local_CM(String brokerAddress, int brokerPort) {
 		this.brokerAddress = brokerAddress;
 		this.brokerPort = brokerPort;
-		ArbiAgentExecutor.execute(brokerAddress,brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ZEROMQ);
+		ArbiAgentExecutor.execute(brokerAddress,brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ACTIVEMQ);
 		init_prolog();
 		ds = new DataSource(){
 			boolean Subscripting_start = false;
@@ -161,7 +161,7 @@ public class Local_CM extends ArbiAgent {
 		action8 = new LatestPerceptionAction();
 		latestPerceptionAction = new AgentAction("RobotContext", action8);
 		LoggerManager.getInstance().registerAction(latestPerceptionAction, LogTiming.Later);
-		ds.connect(brokerAddress, brokerPort, "ds://www.arbi.com/ContextManager", BrokerType.ZEROMQ);
+		ds.connect(brokerAddress, brokerPort, "ds://www.arbi.com/ContextManager", BrokerType.ACTIVEMQ);
 		String subscribeStatement = "(rule (fact (context $context)) --> (notify (context $context)))";
 		ds.subscribe(subscribeStatement);
 //		String subscriptionID = ds.subscribe("(rule (fact (context (robotAt $robotID $x $y))) --> (notify (robotAt $robotID $x $y)))");
@@ -268,7 +268,8 @@ public class Local_CM extends ArbiAgent {
 		String robotID;
 		int brokerPort = 0;
 		if(args.length == 0) {
-			brokerAddress = "127.0.0.1";
+//			brokerAddress = "127.0.0.1";
+			brokerAddress = "172.16.165.143";
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
 			brokerPort = 61316;
