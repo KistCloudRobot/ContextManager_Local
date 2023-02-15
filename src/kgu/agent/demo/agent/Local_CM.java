@@ -60,12 +60,14 @@ public class Local_CM extends ArbiAgent {
 	public static  String CONTEXTMANAGER_ADRESS = "agent://www.arbi.com/ContextManager";
 	public static  String TASKMANAGER_ADDRESS = "agent://www.arbi.com/TaskManager";
 	public static String brokerAddress;
+	private final int brokerPort;
 	LatestPerceptionAction action8;
 	DataSource ds;
 	
-	public Local_CM(String brokerAddress) {
+	public Local_CM(String brokerAddress, int brokerPort) {
 		this.brokerAddress = brokerAddress;
-		ArbiAgentExecutor.execute(brokerAddress, CONTEXTMANAGER_ADRESS, this, BrokerType.ZEROMQ);
+		this.brokerPort = brokerPort;
+		ArbiAgentExecutor.execute(brokerAddress,brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ACTIVEMQ);
 		init_prolog();
 		ds = new DataSource(){
 			boolean Subscripting_start = false;
@@ -110,7 +112,7 @@ public class Local_CM extends ArbiAgent {
 					String sender = "FakeTM";
 					String queryGL;
 				
-//					queryGL = "(context (currentRobotBodyXY $A $B))";
+//					queryGL = "(context (rackOn $A $B))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);
 //					queryGL = "(context (faceToFace $A $B))";
@@ -121,17 +123,17 @@ public class Local_CM extends ArbiAgent {
 //					onQuery(sender, queryGL);									
 //					sleep(300);
 //
-					queryGL = "(context (idleLiftRack $A))";
-					onQuery(sender, queryGL);									
-					sleep(300);
+//					queryGL = "(context (idleLiftRack $A))";
+//					onQuery(sender, queryGL);									
+//					sleep(300);
 //					
 //					queryGL = "(context (onStation $A \"http://www.arbi.com/ontologies/arbi.owl#station1\"))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);	
 //							
-					queryGL = "(context (cargoOn $A $B))";
-					onQuery(sender, queryGL);									
-					sleep(300);			
+//					queryGL = "(context (cargoOn $A $B))";
+//					onQuery(sender, queryGL);									
+//					sleep(300);			
 //					
 //					queryGL = "(context (emptyStation $A))";
 //					onQuery(sender, queryGL);									
@@ -159,7 +161,7 @@ public class Local_CM extends ArbiAgent {
 		action8 = new LatestPerceptionAction();
 		latestPerceptionAction = new AgentAction("RobotContext", action8);
 		LoggerManager.getInstance().registerAction(latestPerceptionAction, LogTiming.Later);
-		ds.connect(brokerAddress, "ds://www.arbi.com/ContextManager", BrokerType.ZEROMQ);
+		ds.connect(brokerAddress, brokerPort, "ds://www.arbi.com/ContextManager", BrokerType.ACTIVEMQ);
 		String subscribeStatement = "(rule (fact (context $context)) --> (notify (context $context)))";
 		ds.subscribe(subscribeStatement);
 //		String subscriptionID = ds.subscribe("(rule (fact (context (robotAt $robotID $x $y))) --> (notify (robotAt $robotID $x $y)))");
@@ -264,15 +266,19 @@ public class Local_CM extends ArbiAgent {
 	public static void main(String[] args) {
 		String brokerAddress;
 		String robotID;
+		int brokerPort = 0;
 		if(args.length == 0) {
-//			brokerAddress = "tcp://127.0.0.1:61319";
-			brokerAddress = "tcp://172.16.165.141:61316";
+//			brokerAddress = "127.0.0.1";
+			brokerAddress = "172.16.165.143";
+//			brokerAddress = "tcp://192.168.100.10:61316";
+//			brokerAddress = "tcp://172.16.165.141:61316";
+			brokerPort = 61316;
 			robotID = "Local";	
 		} else {
 			robotID = args[0];
 			brokerAddress = args[1];
 		}
-		Local_CM agent = new Local_CM(brokerAddress);
+		Local_CM agent = new Local_CM(brokerAddress, brokerPort);
 //		agent.onQuery("testTM", "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#station10\" $Rack))");
 	}
 	
