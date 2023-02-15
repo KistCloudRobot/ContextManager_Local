@@ -975,7 +975,6 @@ public class LatestPerceptionAction implements ActionBody {
 			String ID = "";
 			
 			http://www.arbi.com/ontologies/arbi.owl#Bin_01
-<<<<<<< HEAD
 			if (IDN.equals("http://www.arbi.com/ontologies/arbi.owl#bin_01")) {
 				ID = "bin_01";
 				oIdInd = 0;
