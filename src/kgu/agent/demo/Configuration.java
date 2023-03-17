@@ -6,7 +6,6 @@ import kr.ac.uos.ai.arbi.model.parser.ParseException;
 
 public class Configuration {
 	
-	
 
 	
 	public static GeneralizedList NOTIFY_ROBOT_POSITION;

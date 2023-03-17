@@ -107,29 +107,6 @@ public class Local_CM extends ArbiAgent {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-<<<<<<< HEAD
-				
-				//System.out.println("Notification : " + gl.toString());
-				
-					LatestPerceptionArgument argument = new LatestPerceptionArgument(data);
-					// LatestPerceptionAction action8 = new LatestPerceptionAction();
-					//hwan
-				//	System.out.println("iii" + data);
-					
-					if(argument == null){
-						   return;
-						}
-					//hwan
-					//
-					String latestPerception = (String) action8.execute(argument);
-				
-					String sender = "FakeTM";
-					String queryGL;
-				
-					
-//					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station4\"))";
-////		
-=======
 
 				// System.out.println("Notification : " + gl.toString());
 
@@ -151,9 +128,8 @@ public class Local_CM extends ArbiAgent {
 //				if (queryCount % fakeTMQueryTime == 0) {
 //
 //					queryGL = "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#pallet_05\" $B))";
->>>>>>> refs/remotes/origin/ansung_demo
-//					onQuery(sender, queryGL);									
-<<<<<<< HEAD
+
+//					onQuery(sender, queryGL);				
 //					sleep(300);
 //
 //					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station20\"))";
@@ -167,15 +143,7 @@ public class Local_CM extends ArbiAgent {
 //					queryGL = "(context (hwanSong $A $B $C $D))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);
-=======
->>>>>>> refs/remotes/origin/ansung_demo
-//
-//					queryGL = "(context (idleLiftRack $A))";
-//					onQuery(sender, queryGL);									
-//		
-//					queryGL = "(context (cargoOn $A \"http://www.arbi.com/ontologies/arbi.owl#pallet_05\"))";
-//					onQuery(sender, queryGL);									
-//				}
+
 
 			}
 
@@ -295,15 +263,10 @@ public class Local_CM extends ArbiAgent {
 		String brokerAddress;
 		String robotID;
 		int brokerPort = 0;
-<<<<<<< HEAD
 		if(args.length == 0) {
 			brokerAddress = "127.0.0.1";
 //			brokerAddress = "192.168.0.161";
-=======
-		if (args.length == 0) {
-//			brokerAddress = "127.0.0.1";
-			brokerAddress = "172.16.165.164";
->>>>>>> refs/remotes/origin/ansung_demo
+
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
 			brokerPort = 61316;
