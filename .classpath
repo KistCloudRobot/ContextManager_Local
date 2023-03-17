@@ -108,6 +108,10 @@
 	<classpathentry kind="lib" path="jar/swagger-annotations_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-core_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-jaxrs_2.10.0-RC5-1.2.0.jar"/>
+<<<<<<< HEAD
 	<classpathentry combineaccessrules="false" kind="src" path="/mcArbiFrameworkDemo"/>
+=======
+	<classpathentry kind="lib" path="/home/kist/Downloads/tika-app-2.7.0.jar"/>
+>>>>>>> refs/remotes/origin/ansung_demo
 	<classpathentry kind="output" path="bin"/>
 </classpath>

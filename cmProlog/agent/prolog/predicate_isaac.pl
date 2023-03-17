@@ -1246,8 +1246,8 @@ cargoOn(Box, Rack):-
       currentObjectPose(Rack, Pose2),
       [P1X, P1Y | _] = Pose1,
       [S1X, S1Y | _] = Pose2,
-      P1X == S1X,
-      P1Y == S1Y.
+      P1X == S1X.
+      %P1Y == S1Y.
    
      
 priorVertex(Station, Vertex):-

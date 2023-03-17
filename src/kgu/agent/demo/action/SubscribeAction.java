@@ -6,7 +6,7 @@ import org.jpl7.Query;
 import org.jpl7.Term;
 import kgu.agent.demo.actionArgument.SubscribeArgument;
 import kgu.agent.demo.paser.ContextMonitorParser;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
 import kr.ac.uos.ai.arbi.model.Expression;
 import kr.ac.uos.ai.arbi.model.GLFactory;

@@ -7,7 +7,7 @@ import org.jpl7.Query;
 
 import kgu.agent.demo.actionArgument.GLArgument;
 import kgu.agent.demo.agent.ContextManager;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.model.GLFactory;
 import kr.ac.uos.ai.arbi.model.GeneralizedList;
 import kr.ac.uos.ai.arbi.model.parser.ParseException;

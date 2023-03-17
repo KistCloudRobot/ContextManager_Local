@@ -36,8 +36,6 @@ import kr.ac.uos.ai.arbi.model.GeneralizedList;
 import kr.ac.uos.ai.arbi.model.Expression;
 import kr.ac.uos.ai.arbi.model.parser.ParseException;
 
-
-
 public class Local_CM extends ArbiAgent {
 
 	// private GeneralizedList eventGL;
@@ -55,35 +53,53 @@ public class Local_CM extends ArbiAgent {
 	public AgentAction ontologyUpdateAction;
 	public AgentAction guiAction;
 
-
-
-	public static  String CONTEXTMANAGER_ADRESS = "agent://www.arbi.com/ContextManager";
-	public static  String TASKMANAGER_ADDRESS = "agent://www.arbi.com/TaskManager";
+	public static String CONTEXTMANAGER_ADRESS = "agent://www.arbi.com/ContextManager";
+	public static String TASKMANAGER_ADDRESS = "agent://www.arbi.com/TaskManager";
 	public static String brokerAddress;
 	private final int brokerPort;
 	LatestPerceptionAction action8;
 	DataSource ds;
-	
+	static int queryCount = 0;
+	int fakeTMQueryTime = 20;
+
 	public Local_CM(String brokerAddress, int brokerPort) {
 		this.brokerAddress = brokerAddress;
 		this.brokerPort = brokerPort;
-		ArbiAgentExecutor.execute(brokerAddress,brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ACTIVEMQ);
+		ArbiAgentExecutor.execute(brokerAddress, brokerPort, CONTEXTMANAGER_ADRESS, this, BrokerType.ACTIVEMQ);
 		init_prolog();
-		ds = new DataSource(){
+		ds = new DataSource() {
 			boolean Subscripting_start = false;
 
-			@Override			
+			@Override
 			public void onNotify(String data) {
 				// print log
-				if(data.contains("rackAt") || data.contains("cargoAt")) System.out.println("OnNotify_start : " + data);
-				
+//				if (data.contains("rackAt") || data.contains("cargoAt"))
+//					System.out.println("OnNotify_start : " + data);
+
+				String sender = "FakeTM";
+				String queryGL;
+				String queryresult;
+
+				queryCount++;
+				if (queryCount % fakeTMQueryTime == 0) {
+
+//					queryGL = "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#pallet_03\" $B))";
+//					onQuery(sender, queryGL);
+
+//					queryGL = "(context (cargoOnStoringStation $A))";
+//					onQuery(sender, queryGL);
+
+//					queryGL = "(context (cargoOn $A \"http://www.arbi.com/ontologies/arbi.owl#pallet_03\"))";
+//					onQuery(sender, queryGL);
+				}
+
 				if (!Subscripting_start) {
 					System.out.println("Subscripting_start");
 					Subscripting_start = true;
 				}
 
 				GeneralizedList gl = null;
-				
+
 				try {
 					gl = GLFactory.newGLFromGLString(data);
 					gl = gl.getExpression(0).asGeneralizedList();
@@ -91,6 +107,7 @@ public class Local_CM extends ArbiAgent {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+<<<<<<< HEAD
 				
 				//System.out.println("Notification : " + gl.toString());
 				
@@ -112,7 +129,31 @@ public class Local_CM extends ArbiAgent {
 					
 //					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station4\"))";
 ////		
+=======
+
+				// System.out.println("Notification : " + gl.toString());
+
+				LatestPerceptionArgument argument = new LatestPerceptionArgument(data);
+				// LatestPerceptionAction action8 = new LatestPerceptionAction();
+				// System.out.println("iii" + data);
+
+				if (argument == null) {
+					return;
+				}
+
+				String latestPerception = (String) action8.execute(argument);
+
+//				String sender = "FakeTM";
+//				String queryGL;
+//				String queryresult;
+//				
+//				queryCount++;
+//				if (queryCount % fakeTMQueryTime == 0) {
+//
+//					queryGL = "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#pallet_05\" $B))";
+>>>>>>> refs/remotes/origin/ansung_demo
 //					onQuery(sender, queryGL);									
+<<<<<<< HEAD
 //					sleep(300);
 //
 //					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station20\"))";
@@ -126,38 +167,20 @@ public class Local_CM extends ArbiAgent {
 //					queryGL = "(context (hwanSong $A $B $C $D))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);
+=======
+>>>>>>> refs/remotes/origin/ansung_demo
 //
 //					queryGL = "(context (idleLiftRack $A))";
 //					onQuery(sender, queryGL);									
-//					sleep(300);
-//					
-//					queryGL = "(context (onStation $A \"http://www.arbi.com/ontologies/arbi.owl#station1\"))";
+//		
+//					queryGL = "(context (cargoOn $A \"http://www.arbi.com/ontologies/arbi.owl#pallet_05\"))";
 //					onQuery(sender, queryGL);									
-//					sleep(300);	
-//							
-//					queryGL = "(context (cargoOn $A $B))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);			
-//					
-//					queryGL = "(context (emptyStation $A))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);
-//
-//					queryGL = "(context (cargoOnStation $A))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);
-//			    
-////			
-//				
-//				queryGL = "(context (hwanSong $A $B $C $D))";
-//				onQuery(sender, queryGL);								
-//				sleep(300);
-////					
+//				}
 
 			}
 
 		};
-						
+
 		ReasoningQueryAction action1 = new ReasoningQueryAction(ds);
 		reasoningAction = new AgentAction("ContextService", action1);
 		LoggerManager.getInstance().registerAction(reasoningAction, LogTiming.Later);
@@ -169,7 +192,7 @@ public class Local_CM extends ArbiAgent {
 		String subscribeStatement = "(rule (fact (context $context)) --> (notify (context $context)))";
 		ds.subscribe(subscribeStatement);
 //		String subscriptionID = ds.subscribe("(rule (fact (context (robotAt $robotID $x $y))) --> (notify (robotAt $robotID $x $y)))");
-	//	System.out.println(subscriptionID);
+		// System.out.println(subscriptionID);
 //		ds.subscribe("(rule (fact (context (cargoAt $cargoID $x $y))) --> (notify (cargoAt $cargoID $x $y)))");
 //		ds.subscribe("(rule (fact (context (rackAt $cargoID $x $y))) --> (notify (rackAt $cargoID $x $y)))");
 //		ds.subscribe("(rule (fact (context (robotInfo $robotID $x $y $theta $loading $time))) --> (notify (robotInfo $robotID $x $y $theta $loading $time)))");
@@ -178,9 +201,7 @@ public class Local_CM extends ArbiAgent {
 	public void onNotify(String sender, String notification) {
 		System.out.println(notification);
 	}
-	
 
-	
 //	public String onQuery(String sender, String queryGL) {
 //		System.out.println("ONQuery start");
 //		String message, result, latestPerception, predicate;
@@ -215,15 +236,15 @@ public class Local_CM extends ArbiAgent {
 		System.out.println("sender : " + sender);
 		System.out.println("queryGL : " + queryGL);
 		GeneralizedList gl = null;
-		
-		// sender == taskPolicyLearner then 
-	    if (sender.contains("TaskPolicyLearner")) {
-	    	System.out.println("!!!!");
-	    	try {
-	    		GeneralizedList query = GLFactory.newGLFromGLString(queryGL);
+
+		// sender == taskPolicyLearner then
+		if (sender.contains("TaskPolicyLearner")) {
+			System.out.println("!!!!");
+			try {
+				GeneralizedList query = GLFactory.newGLFromGLString(queryGL);
 
 				System.out.println(query);
-				
+
 				String glName = query.getExpression(0).toString();
 				String test = query.getExpression(1).toString();
 				System.out.println(glName);
@@ -231,26 +252,29 @@ public class Local_CM extends ArbiAgent {
 				if (glName.contains("batteryRemained")) {
 					return "(context (batteryRemained " + query.getExpression(1).toString() + " \"100\"))";
 				} else if (glName.contains("batteryNeed")) {
-					return "(context (batteryNeed " + query.getExpression(1).toString()+ " " + query.getExpression(2).toString()+ " \"50\"))";
+					return "(context (batteryNeed " + query.getExpression(1).toString() + " "
+							+ query.getExpression(2).toString() + " \"50\"))";
 				} else if (glName.contains("taskDistance")) {
-					return "(context (taskDistance " + query.getExpression(1).toString()+  " " + query.getExpression(2).toString() + " \"23\"))";
+					return "(context (taskDistance " + query.getExpression(1).toString() + " "
+							+ query.getExpression(2).toString() + " \"23\"))";
 				} else if (glName.contains("predictTaskTime")) {
-					return "(context (predictTaskTime " + query.getExpression(1).toString()+ " " + query.getExpression(2).toString()  + " \"450\"))";
+					return "(context (predictTaskTime " + query.getExpression(1).toString() + " "
+							+ query.getExpression(2).toString() + " \"450\"))";
 				} else if (glName.contains("loadedBy")) {
-					return "(context (loadedBy "  + query.getExpression(1).toString()+  " \"True\"))";
+					return "(context (loadedBy " + query.getExpression(1).toString() + " \"True\"))";
 				} else if (glName.contains("collidable")) {
-					return "(context (collidable " + query.getExpression(1).toString()+" " + query.getExpression(2).toString() + " \"Flase\"))";
+					return "(context (collidable " + query.getExpression(1).toString() + " "
+							+ query.getExpression(2).toString() + " \"Flase\"))";
 				}
-				
+
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	    }
-		
-		
+		}
+
 //		String queryResult = "";
-		
+
 		try {
 			gl = GLFactory.newGLFromGLString(queryGL);
 		} catch (ParseException e) {
@@ -258,12 +282,12 @@ public class Local_CM extends ArbiAgent {
 			e.printStackTrace();
 		}
 //			predicate = queryGL.split(" ")[1].replace("(", "");
-			ReasoningQueryArgument rqArgument = new ReasoningQueryArgument(sender, queryGL);
-			ReasoningQueryAction action1 = new ReasoningQueryAction(ds);
-			reasoningAction = new AgentAction("ContextService", action1);
-			String queryResult = (String) reasoningAction.execute(rqArgument);
-			System.out.println("queryResult : " + queryResult);
-		   				
+		ReasoningQueryArgument rqArgument = new ReasoningQueryArgument(sender, queryGL);
+		ReasoningQueryAction action1 = new ReasoningQueryAction(ds);
+		reasoningAction = new AgentAction("ContextService", action1);
+		String queryResult = (String) reasoningAction.execute(rqArgument);
+		System.out.println("queryResult : " + queryResult);
+
 		return queryResult;
 	}
 
@@ -271,13 +295,19 @@ public class Local_CM extends ArbiAgent {
 		String brokerAddress;
 		String robotID;
 		int brokerPort = 0;
+<<<<<<< HEAD
 		if(args.length == 0) {
 			brokerAddress = "127.0.0.1";
 //			brokerAddress = "192.168.0.161";
+=======
+		if (args.length == 0) {
+//			brokerAddress = "127.0.0.1";
+			brokerAddress = "172.16.165.164";
+>>>>>>> refs/remotes/origin/ansung_demo
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
 			brokerPort = 61316;
-			robotID = "Local";	
+			robotID = "Local";
 		} else {
 			robotID = args[0];
 			brokerAddress = args[1];
@@ -285,22 +315,19 @@ public class Local_CM extends ArbiAgent {
 		Local_CM agent = new Local_CM(brokerAddress, brokerPort);
 //		agent.onQuery("testTM", "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#station10\" $Rack))");
 	}
-	
-	
+
 	public static void log(String log) {
 		try {
-			File file = new File("E:\\contextLog.txt" );
+			File file = new File("E:\\contextLog.txt");
 			FileWriter fw = new FileWriter(file, true);
-			
+
 			fw.write(log + "\n");
-			
+
 			fw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}	
-	
-
+	}
 
 	public void init_prolog() {
 

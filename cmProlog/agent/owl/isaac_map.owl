@@ -289,8 +289,8 @@
        <rdf:type rdf:resource="&knowrob;Point3D"/>
        <rdf:type rdf:resource="&arbi;StoringStation"/>
        <rdf:type rdf:resource="&arbi;Station"/>
-       <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</knowrob:xCoord>
-       <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.6</knowrob:yCoord>
+       <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.97</knowrob:xCoord>
+       <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.42</knowrob:yCoord>
        <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-0.6215511</knowrob:zCoord>
        <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
        <knowrob:preparationVertex rdf:datatype="&xsd;double">115</knowrob:preparationVertex>
@@ -647,36 +647,6 @@
        <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 43)"</knowrob:moveTypeIn>
        <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 135)"</knowrob:moveTypeOut>
        <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">43</knowrob:vertexnum>
-       <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"StoringStation"</knowrob:stationType>
-   </owl:NamedIndividual>  
-
-   <owl:NamedIndividual rdf:about="&arbi;station44">
-       <rdf:type rdf:resource="&knowrob;Point3D"/>
-       <rdf:type rdf:resource="&arbi;StoringStation"/>
-       <rdf:type rdf:resource="&arbi;Station"/>
-       <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:xCoord>
-       <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:yCoord>
-       <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:zCoord>
-       <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
-       <knowrob:preparationVertex rdf:datatype="&xsd;double">134</knowrob:preparationVertex>
-       <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 44)"</knowrob:moveTypeIn>
-       <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 134)"</knowrob:moveTypeOut>
-       <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">44</knowrob:vertexnum>
-       <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"StoringStation"</knowrob:stationType>
-   </owl:NamedIndividual>  
-
-   <owl:NamedIndividual rdf:about="&arbi;station45">
-       <rdf:type rdf:resource="&knowrob;Point3D"/>
-       <rdf:type rdf:resource="&arbi;StoringStation"/>
-       <rdf:type rdf:resource="&arbi;Station"/>
-       <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:xCoord>
-       <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:yCoord>
-       <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:zCoord>
-       <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
-       <knowrob:preparationVertex rdf:datatype="&xsd;double">132</knowrob:preparationVertex>
-       <knowrob:moveTypeIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(PreciseMove 45)"</knowrob:moveTypeIn>
-       <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 132)"</knowrob:moveTypeOut>
-       <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">45</knowrob:vertexnum>
        <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"StoringStation"</knowrob:stationType>
    </owl:NamedIndividual>  
 
