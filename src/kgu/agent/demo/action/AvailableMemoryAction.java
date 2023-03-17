@@ -6,7 +6,7 @@ import org.jpl7.Query;
 import org.jpl7.Term;
 
 import kgu.agent.demo.actionArgument.AvailableMemoryArgument;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 
 
 public class AvailableMemoryAction implements ActionBody {

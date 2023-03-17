@@ -1,7 +1,7 @@
 package kgu.agent.demo.action;
 
 import kgu.agent.demo.actionArgument.NotifyArgument;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 
 
 public class NotifyAction implements ActionBody {

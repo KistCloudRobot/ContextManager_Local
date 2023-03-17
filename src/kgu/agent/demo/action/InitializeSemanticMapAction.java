@@ -8,7 +8,7 @@ import org.jpl7.Query;
 import kgu.agent.demo.actionArgument.InitializeSemanticMapArgument;
 import kgu.agent.demo.actionArgument.LatestPerceptionArgument;
 import kgu.agent.demo.agent.ContextManager;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.model.Expression;
 import kr.ac.uos.ai.arbi.model.GLFactory;
 import kr.ac.uos.ai.arbi.model.GeneralizedList;

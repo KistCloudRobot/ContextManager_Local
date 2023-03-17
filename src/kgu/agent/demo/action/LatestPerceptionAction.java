@@ -11,8 +11,7 @@ import java.util.List;
 import org.jpl7.Query;
 
 import kgu.agent.demo.actionArgument.LatestPerceptionArgument;
-
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.model.GeneralizedList;
 import kr.ac.uos.ai.arbi.model.parser.GLParser;
 

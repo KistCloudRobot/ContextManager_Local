@@ -10,7 +10,7 @@ import org.jpl7.Term;
 
 import kgu.agent.demo.actionArgument.ReasoningQueryArgument;
 import kgu.agent.demo.paser.ContextQueryPaser;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
 import kr.ac.uos.ai.arbi.model.Binding;
 import kr.ac.uos.ai.arbi.model.BindingFactory;
