@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ARBIFramework-1.2d"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="jar/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="jar/activemq-broker-5.13.3.jar"/>
 	<classpathentry kind="lib" path="jar/activemq-client-5.13.3.jar"/>
@@ -105,5 +108,6 @@
 	<classpathentry kind="lib" path="jar/swagger-annotations_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-core_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-jaxrs_2.10.0-RC5-1.2.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mcArbiFrameworkDemo"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -129,7 +129,7 @@
         <knowrob:moveTypeOut rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"(StraightBackMove 145)"</knowrob:moveTypeOut>
 	    <knowrob:vertexnum rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4</knowrob:vertexnum>
 	    <knowrob:stationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"ReleaseStation"</knowrob:stationType>
-	</owl:NamedIndividual>	.
+	</owl:NamedIndividual>	
 	
 
 		

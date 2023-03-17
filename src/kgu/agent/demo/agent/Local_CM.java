@@ -24,9 +24,9 @@ import kr.ac.uos.ai.arbi.Broker;
 import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
-import kr.ac.uos.ai.arbi.agent.logger.AgentAction;
 import kr.ac.uos.ai.arbi.agent.logger.LogTiming;
 import kr.ac.uos.ai.arbi.agent.logger.LoggerManager;
+import kr.ac.uos.ai.arbi.agent.logger.action.AgentAction;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
 import kgu.agent.demo.actionArgument.SubscribeArgument;
 
@@ -105,17 +105,21 @@ public class Local_CM extends ArbiAgent {
 					//hwan
 					//
 					String latestPerception = (String) action8.execute(argument);
-
-					
-					
-//					
+				
 					String sender = "FakeTM";
 					String queryGL;
 				
-//					queryGL = "(context (rackOn $A $B))";
+					
+//					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station4\"))";
+////		
 //					onQuery(sender, queryGL);									
 //					sleep(300);
-//					queryGL = "(context (faceToFace $A $B))";
+//
+//					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station20\"))";
+////		
+//					onQuery(sender, queryGL);									
+//					sleep(300);
+//					queryGL = "(context (emptyStoringStation $A))";
 //					onQuery(sender, queryGL);									
 //					sleep(300);
 					
@@ -268,8 +272,8 @@ public class Local_CM extends ArbiAgent {
 		String robotID;
 		int brokerPort = 0;
 		if(args.length == 0) {
-//			brokerAddress = "127.0.0.1";
-			brokerAddress = "172.16.165.143";
+			brokerAddress = "127.0.0.1";
+//			brokerAddress = "192.168.0.161";
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
 			brokerPort = 61316;

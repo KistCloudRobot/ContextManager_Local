@@ -164,8 +164,35 @@
 	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
 </rdf:Description>		
 
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_05">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
 
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_06">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
 
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_07">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
 
 <rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_01">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>

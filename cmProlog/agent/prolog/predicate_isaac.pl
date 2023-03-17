@@ -92,7 +92,11 @@
     nearBy3/3,
     deadLock/2,
     hwanSong/4,
-    stationType/2
+    stationType/2,
+    isAssignedTo/2,
+    preparationVertexForAssignedVertex/2,
+    compareVertex/2,
+    preCompareVertex/2
     ]).
 
 set([], []).
@@ -1179,11 +1183,46 @@ rackOn(Rack, Station):-
     
      
 
-emptyStoringStation(Station):-
+%emptyStoringStation(Station):-
+%      rdfs_individual_of(Station, arbi: 'StoringStation'), 
+%      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
+%      foreach(member(O,Objects), not(rackOn(O, Station))).
+      
+% 0304
+emptyStoringStation(NotAssignedStation):-
+     rdfs_individual_of(NotAssignedStation, arbi: 'StoringStation'),
+     %not(rdf(NotAssignedStation, knowrob:isAssignedTo, knowrob: 'UnstoringTask')),
+     not(rdf(NotAssignedStation, knowrob:isAssignedTo, Task)),
      
-      rdfs_individual_of(Station, arbi: 'StoringStation'), 
-      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
-      foreach(member(O,Objects), not(rackOn(O, Station))).
+     once(
+     	(rdf(Station, knowrob:isAssignedTo, Task), preCompareVertex(NotAssignedStation));
+     	(W1 is 0)),
+     
+     findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
+     foreach(member(O,Objects), not(rackOn(O, NotAssignedStation))).
+      
+isAssignedTo(Station, Task):-
+	rdf(Station, knowrob:isAssignedTo, Task).
+      	
+%Return preparationVertex for assignedVertex.
+%need to revise name
+preparationVertexForAssignedVertex(Station, Vertex):-
+	rdfs_individual_of(Station, arbi:'Station'),
+	%rdf(Station, knowrob:isAssignedTo, knowrob: 'UnstoringTask'), %search assignedVertex.
+	rdf(Station, knowrob:isAssignedTo, Task), 
+	rdf(Station, knowrob:preparationVertex, literal(type(_,V1x))),atom_to_term(V1x,V1X,_), %search every preparationVertex of assignedVertex.
+	Vertex = V1X.	
+	
+compareVertex(Vertex1, Vertex2):-
+	Vertex1 == Vertex2.
+
+preCompareVertex(AllStation):-
+	rdfs_individual_of(Station, arbi:'Station'),
+	preparationVertexForAssignedVertex(Station, PreparationVertex),
+	
+	rdfs_individual_of(AllStation, arbi:'Station'),
+	preparationVertex(AllStation, PreparationVertex2),
+	not(compareVertex(PreparationVertex2, PreparationVertex)).
       
 idleLiftRack(Rack):-
       rdfs_individual_of(Rack, knowrob: 'Pallet'), 
