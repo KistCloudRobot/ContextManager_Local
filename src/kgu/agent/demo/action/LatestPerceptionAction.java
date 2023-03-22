@@ -111,9 +111,10 @@ public class LatestPerceptionAction implements ActionBody {
 			String goal_id = gl.getExpression(0).asValue().stringValue();
 			String station = gl.getExpression(1).asValue().stringValue();
 
-			assertString = "'http://www.arbi.com/ontologies/arbi.owl#" + station
-					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://knowrob.org/kb/knowrob.owl#UnstoringTask'";
+			assertString = "'" + station
+					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://www.arbi.com/ontologies/arbi.owl#UnstoringTask'";
 
+			System.out.println("assign check : " + assertString);
 			assertTriple(assertString);
 
 		}
@@ -121,9 +122,10 @@ public class LatestPerceptionAction implements ActionBody {
 			String goal_id = gl.getExpression(0).asValue().stringValue();
 			String station = gl.getExpression(1).asValue().stringValue();
 
-			assertString = "'http://www.arbi.com/ontologies/arbi.owl#" + station
-					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://knowrob.org/kb/knowrob.owl#UnstoringTask'";
+			assertString = "'" + station
+					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://www.arbi.com/ontologies/arbi.owl#UnstoringTask'";
 
+			System.out.println("released check : " + assertString);
 			retractTriple(assertString);
 		}
 		if (gl.getName().equals("RobotJointStates")) {

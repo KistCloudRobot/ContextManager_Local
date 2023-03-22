@@ -20,7 +20,6 @@ import kgu.agent.demo.actionArgument.GUIArgument;
 import kgu.agent.demo.actionArgument.LatestPerceptionArgument;
 import kgu.agent.demo.actionArgument.LowLevelContextMonitorArgument;
 import kgu.agent.demo.actionArgument.ReasoningQueryArgument;
-import kr.ac.uos.ai.arbi.Broker;
 import kr.ac.uos.ai.arbi.BrokerType;
 import kr.ac.uos.ai.arbi.agent.ArbiAgent;
 import kr.ac.uos.ai.arbi.agent.ArbiAgentExecutor;
@@ -82,6 +81,15 @@ public class Local_CM extends ArbiAgent {
 
 				queryCount++;
 				if (queryCount % fakeTMQueryTime == 0) {
+					
+//					queryGL = "(context (isAssignedTo $A $B))";
+//					onQuery(sender, queryGL);
+					
+//					queryGL = "(context (preparationVertexForAssignedVertex $A $B))";
+//					onQuery(sender, queryGL);
+//					
+//					queryGL = "(context (preCompareVertex $A $B))";
+//					onQuery(sender, queryGL);
 
 //					queryGL = "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#pallet_03\" $B))";
 //					onQuery(sender, queryGL);
@@ -119,30 +127,6 @@ public class Local_CM extends ArbiAgent {
 				}
 
 				String latestPerception = (String) action8.execute(argument);
-
-//				String sender = "FakeTM";
-//				String queryGL;
-//				String queryresult;
-//				
-//				queryCount++;
-//				if (queryCount % fakeTMQueryTime == 0) {
-//
-//					queryGL = "(context (rackOn \"http://www.arbi.com/ontologies/arbi.owl#pallet_05\" $B))";
-
-//					onQuery(sender, queryGL);				
-//					sleep(300);
-//
-//					queryGL = "(context (rackOn $A \"http://www.arbi.com/ontologies/arbi.owl#station20\"))";
-////		
-//					onQuery(sender, queryGL);									
-//					sleep(300);
-//					queryGL = "(context (emptyStoringStation $A))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);
-					
-//					queryGL = "(context (hwanSong $A $B $C $D))";
-//					onQuery(sender, queryGL);									
-//					sleep(300);
 
 
 			}
@@ -206,40 +190,40 @@ public class Local_CM extends ArbiAgent {
 		GeneralizedList gl = null;
 
 		// sender == taskPolicyLearner then
-		if (sender.contains("TaskPolicyLearner")) {
-			System.out.println("!!!!");
-			try {
-				GeneralizedList query = GLFactory.newGLFromGLString(queryGL);
-
-				System.out.println(query);
-
-				String glName = query.getExpression(0).toString();
-				String test = query.getExpression(1).toString();
-				System.out.println(glName);
-				System.out.println(test);
-				if (glName.contains("batteryRemained")) {
-					return "(context (batteryRemained " + query.getExpression(1).toString() + " \"100\"))";
-				} else if (glName.contains("batteryNeed")) {
-					return "(context (batteryNeed " + query.getExpression(1).toString() + " "
-							+ query.getExpression(2).toString() + " \"50\"))";
-				} else if (glName.contains("taskDistance")) {
-					return "(context (taskDistance " + query.getExpression(1).toString() + " "
-							+ query.getExpression(2).toString() + " \"23\"))";
-				} else if (glName.contains("predictTaskTime")) {
-					return "(context (predictTaskTime " + query.getExpression(1).toString() + " "
-							+ query.getExpression(2).toString() + " \"450\"))";
-				} else if (glName.contains("loadedBy")) {
-					return "(context (loadedBy " + query.getExpression(1).toString() + " \"True\"))";
-				} else if (glName.contains("collidable")) {
-					return "(context (collidable " + query.getExpression(1).toString() + " "
-							+ query.getExpression(2).toString() + " \"Flase\"))";
-				}
-
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+//		if (sender.contains("TaskPolicyLearner")) {
+//			System.out.println("!!!!");
+//			try {
+//				GeneralizedList query = GLFactory.newGLFromGLString(queryGL);
+//
+//				System.out.println(query);
+//
+//				String glName = query.getExpression(0).toString();
+//				String test = query.getExpression(1).toString();
+//				System.out.println(glName);
+//				System.out.println(test);
+//				if (glName.contains("batteryRemained")) {
+//					return "(context (batteryRemained " + query.getExpression(1).toString() + " \"100\"))";
+//				} else if (glName.contains("batteryNeed")) {
+//					return "(context (batteryNeed " + query.getExpression(1).toString() + " "
+//							+ query.getExpression(2).toString() + " \"50\"))";
+//				} else if (glName.contains("taskDistance")) {
+//					return "(context (taskDistance " + query.getExpression(1).toString() + " "
+//							+ query.getExpression(2).toString() + " \"23\"))";
+//				} else if (glName.contains("predictTaskTime")) {
+//					return "(context (predictTaskTime " + query.getExpression(1).toString() + " "
+//							+ query.getExpression(2).toString() + " \"450\"))";
+//				} else if (glName.contains("loadedBy")) {
+//					return "(context (loadedBy " + query.getExpression(1).toString() + " \"True\"))";
+//				} else if (glName.contains("collidable")) {
+//					return "(context (collidable " + query.getExpression(1).toString() + " "
+//							+ query.getExpression(2).toString() + " \"Flase\"))";
+//				}
+//
+//			} catch (ParseException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
 
 //		String queryResult = "";
 
@@ -264,7 +248,8 @@ public class Local_CM extends ArbiAgent {
 		String robotID;
 		int brokerPort = 0;
 		if(args.length == 0) {
-			brokerAddress = "127.0.0.1";
+//			brokerAddress = "127.0.0.1";
+			brokerAddress = "172.16.165.164";
 //			brokerAddress = "192.168.0.161";
 
 //			brokerAddress = "tcp://192.168.100.10:61316";

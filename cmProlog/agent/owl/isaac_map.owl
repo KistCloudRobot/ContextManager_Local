@@ -37,7 +37,9 @@
 	    <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>
 	</owl:NamedIndividual>
 	
-	
+	<owl:NamedIndividual rdf:about="&arbi;UnstoringTask">
+    	<rdf:type rdf:resource="&knowrob;Task"/>
+	</owl:NamedIndividual>
 	
     <owl:NamedIndividual rdf:about="&arbi;LoadingStation01">
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
