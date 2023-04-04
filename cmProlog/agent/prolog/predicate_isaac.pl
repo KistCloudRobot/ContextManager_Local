@@ -1202,19 +1202,11 @@ isEmpty(L):-
 emptyStoringStation(NotAssignedStation):-
      rdfs_individual_of(NotAssignedStation, arbi: 'StoringStation'),
      not(rdf(NotAssignedStation, knowrob:isAssignedTo, Task)),
-     
      findall(Station,  (rdf(Station, knowrob:isAssignedTo, Task)), Stations),
      once(
-     (isEmpty(Stations));
-     (W1 is 0)
+     (isEmpty(Stations), W1 is 0    );
+     (not(isEmpty(Stations)),  foreach( member(O,Stations),(preCompareVertex(O, NotAssignedStation))), W1 is 1)
       ),
-     once(
-     (not(isEmpty(Stations)),foreach(member(O,Stations),(preCompareVertex(O, NotAssignedStation))))
-      );
-      (
-     (W1 is 1)
-      ),
-      
      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
      foreach(member(O,Objects), not(rackOn(O, NotAssignedStation))).
       

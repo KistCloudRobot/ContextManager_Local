@@ -82,10 +82,10 @@ public class Local_CM extends ArbiAgent {
 				queryCount++;
 				if (queryCount % fakeTMQueryTime == 0) {
 					
-//					queryGL = "(context (isAssignedTo $A $B))";
+//					queryGL = "(context (emptyStoringStation $A))";
 //					onQuery(sender, queryGL);
-					
-//					queryGL = "(context (preparationVertexForAssignedVertex $A $B))";
+////					
+//					queryGL = "(context (rackOn $A $B))";
 //					onQuery(sender, queryGL);
 //					
 //					queryGL = "(context (preCompareVertex $A $B))";
