@@ -55,6 +55,7 @@
     currentFingerPerception/2,
 	currentRobotBodyPerception/2,
 	rackOn/2,
+	isEmpty/1,
 	emptyStoringStation/1,
 	cargoOn/2,
 	cargoOnStoringStation/1,
@@ -92,9 +93,18 @@
     nearBy3/3,
     deadLock/2,
     hwanSong/4,
-    stationType/2
+    stationType/2,
+    isAssignedTo/2,
+    preparationVertex/2,
+    preparationVertexForAssignedVertex/2,
+    ForAssignedVertex/2,
+    compareVertex/2,
+    preCompareVertex/2,
+    notAssignedTo/1,
+    len/2
     ]).
 
+len([],0).
 set([], []).
 set([H|T], [H|T1]) :- subtract(T, [H], T2), set(T2, T1).
 
@@ -1175,15 +1185,65 @@ rackOn(Rack, Station):-
       currentObjectPose(Rack, Pose),
       [P1X, P1Y | _] = Pose,
       P1X == S1X,
-      S1X == P1Y.
-    
+      S1X == P1Y.  
+      
+      
+notAssignedTo(Station):-
+	rdfs_individual_of(Station, arbi: 'StoringStation'),
+	%rdfs_individual_of(Task, knowrob:'Task'),
+	not(rdf(Station, knowrob:isAssignedTo, Task)).
+	
+len([_|T],N) :- len(T,X), N is X+1.	
+	
+isEmpty(L):-
+	len(L,X),X=:=0.
+	
+% 0304
+emptyStoringStation(NotAssignedStation):-
+     rdfs_individual_of(NotAssignedStation, arbi: 'StoringStation'),
+     not(rdf(NotAssignedStation, knowrob:isAssignedTo, Task)),
      
+     findall(Station,  (rdf(Station, knowrob:isAssignedTo, Task)), Stations),
+     once(
+     (isEmpty(Stations));
+     (W1 is 0)
+      ),
+     once(
+     (not(isEmpty(Stations)),foreach(member(O,Stations),(preCompareVertex(O, NotAssignedStation))))
+      );
+      (
+     (W1 is 1)
+      ),
+      
+     findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
+     foreach(member(O,Objects), not(rackOn(O, NotAssignedStation))).
+      
+isAssignedTo(Station, Task):-
+	rdf(Station, knowrob:isAssignedTo, Task).
+      	
+%Return preparationVertex for assignedVertex.
+%need to revise name
+preparationVertexForAssignedVertex(Station, Vertex):-
+	rdfs_individual_of(Station, arbi:'Station'),
+	rdf(Station, knowrob:isAssignedTo, Task), 
+	rdf(Station, knowrob:preparationVertex, literal(type(_,V1x))),atom_to_term(V1x,V1X,_), %search every preparationVertex of assignedVertex.
+	Vertex = V1X.	
+	
+compareVertex(Vertex1, Vertex2):-
+	Vertex1 == Vertex2.
 
-emptyStoringStation(Station):-
-     
-      rdfs_individual_of(Station, arbi: 'StoringStation'), 
-      findall(Object,  (rdfs_individual_of(Object, knowrob: 'Pallet')), Objects),
-      foreach(member(O,Objects), not(rackOn(O, Station))).
+preparationVertex(Station, Vertex):-
+	  rdfs_individual_of(Station, arbi:'Station'),
+	  rdf(Station, knowrob:preparationVertex, literal(type(_,V1x))),atom_to_term(V1x,V1X,_),
+	  Vertex = V1X.
+
+preCompareVertex(Station, AllStation):-
+	rdfs_individual_of(Station, arbi:'Station'),
+	preparationVertexForAssignedVertex(Station, PreparationVertex),
+	
+	rdfs_individual_of(AllStation, arbi:'Station'),
+	preparationVertex(AllStation, PreparationVertex2),
+	not(compareVertex(PreparationVertex2, PreparationVertex)).
       
 idleLiftRack(Rack):-
       rdfs_individual_of(Rack, knowrob: 'Pallet'), 
@@ -1207,8 +1267,8 @@ cargoOn(Box, Rack):-
       currentObjectPose(Rack, Pose2),
       [P1X, P1Y | _] = Pose1,
       [S1X, S1Y | _] = Pose2,
-      P1X == S1X,
-      P1Y == S1Y.
+      P1X == S1X.
+      %P1Y == S1Y.
    
      
 priorVertex(Station, Vertex):-

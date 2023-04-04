@@ -181,6 +181,11 @@
         <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/knowrob.owl#causalActors"/>
     </owl:ObjectProperty>
     
+    <!-- http://knowrob.org/kb/knowrob.owl#isAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#isAssignedTo">
+    </owl:ObjectProperty>
+    
 
 
     <!-- http://knowrob.org/kb/knowrob.owl#causes-EventEvent -->
@@ -8631,6 +8636,11 @@ Examples include the location of the center of mass of the Milky Way galaxy at t
 
     <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Point3D">
         <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#Point"/>
+    </owl:Class>
+    
+    <!-- http://knowrob.org/kb/knowrob.owl#Task -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Task">
     </owl:Class>
     
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ARBIFramework-1.2d"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="jar/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="jar/activemq-broker-5.13.3.jar"/>
 	<classpathentry kind="lib" path="jar/activemq-client-5.13.3.jar"/>
@@ -30,7 +29,6 @@
 	<classpathentry kind="lib" path="jar/apollo-stomp-1.7.1.jar"/>
 	<classpathentry kind="lib" path="jar/apollo-util-1.7.1.jar"/>
 	<classpathentry kind="lib" path="jar/apollo-web-1.7.1.jar"/>
-	<classpathentry kind="lib" path="jar/ARBIFramework.jar"/>
 	<classpathentry kind="lib" path="jar/asm-3.1.jar"/>
 	<classpathentry kind="lib" path="jar/commons-codec-1.1.jar"/>
 	<classpathentry kind="lib" path="jar/commons-lang-2.1.jar"/>
@@ -105,5 +103,6 @@
 	<classpathentry kind="lib" path="jar/swagger-annotations_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-core_2.10.0-RC5-1.2.0.jar"/>
 	<classpathentry kind="lib" path="jar/swagger-jaxrs_2.10.0-RC5-1.2.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ARBIFramework-1.2d"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -15,7 +15,7 @@ import org.json.simple.JSONObject;
 import kgu.agent.demo.actionArgument.ContextOntologyMonitorArgument;
 import kgu.agent.demo.actionArgument.GUIArgument;
 import kgu.agent.demo.actionArgument.LowLevelContextMonitorArgument;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
 
 public class GUIAction implements ActionBody {

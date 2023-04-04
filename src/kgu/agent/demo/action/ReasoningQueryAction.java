@@ -10,7 +10,7 @@ import org.jpl7.Term;
 
 import kgu.agent.demo.actionArgument.ReasoningQueryArgument;
 import kgu.agent.demo.paser.ContextQueryPaser;
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.ltm.DataSource;
 import kr.ac.uos.ai.arbi.model.Binding;
 import kr.ac.uos.ai.arbi.model.BindingFactory;
@@ -21,11 +21,11 @@ import kr.ac.uos.ai.arbi.model.parser.ParseException;
 
 public class ReasoningQueryAction implements ActionBody {
 	private DataSource ds;
-	
+
 	public ReasoningQueryAction(DataSource ds) {
 		this.ds = ds;
 	}
-	
+
 	@Override
 	public Object execute(Object o) {
 		ReasoningQueryArgument Log = (ReasoningQueryArgument) o;
@@ -33,8 +33,9 @@ public class ReasoningQueryAction implements ActionBody {
 		String queryResult = "";
 		double time2;
 		double time;
+		String predicate = "";
 
-		//System.out.println("what i got is  :" +  o);
+		// System.out.println("what i got is :" + o);
 		GeneralizedList gl = null;
 		try {
 			gl = GLFactory.newGLFromGLString(Log.getQueryGL());
@@ -52,11 +53,10 @@ public class ReasoningQueryAction implements ActionBody {
 		String[] forVariable = temp.split("\\)|\\(| |\n|\t");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-		
-		//System.out.println("gl: "+gl); //test
-		//System.out.println(gl.getExpressionsSize()); //test
-		
-		//GL to PL 바꿔주는 부분 (나중에 모듈화 필요)
+		// System.out.println("gl: "+gl); //test
+		// System.out.println(gl.getExpressionsSize()); //test
+
+		// GL to PL 바꿔주는 부분 (나중에 모듈화 필요)
 		for (int i = 0; i < gl.getExpressionsSize(); i++) {
 
 			Expression e = gl.getExpression(i);
@@ -64,7 +64,7 @@ public class ReasoningQueryAction implements ActionBody {
 
 			int tempSize = temp2.getExpressionsSize();
 
-			String predicate = temp2.getName();
+			predicate = temp2.getName();
 			String prologQuery = predicate + "(";
 			String[] arg = new String[tempSize];
 
@@ -74,7 +74,7 @@ public class ReasoningQueryAction implements ActionBody {
 				Date startTime = null;
 
 				arg[j] = temp2.getExpression(j).toString();
-				//System.out.println(arg[j]);
+				// System.out.println(arg[j]);
 
 				if (arg[j].contains("$")) {
 					arg[j] = arg[j].substring(1, arg[j].length());
@@ -83,93 +83,92 @@ public class ReasoningQueryAction implements ActionBody {
 				} else {
 
 					arg[j] = arg[j].substring(1, arg[j].length() - 1);
-					//arg[j] = arg[j].substring(1, arg[j].length());
-					
+					// arg[j] = arg[j].substring(1, arg[j].length());
+
 					try {
 						startTime = sdf.parse(arg[j]);
 						startTimeEpoch = startTime.getTime() / 1000;
 						arg[j] = "http://www.arbi.com/ontologies/arbi.owl#timepoint_" + startTimeEpoch;
-					} catch (java.text.ParseException e2) {}
-		
-					if(arg[j].contains("#"))
+					} catch (java.text.ParseException e2) {
+					}
+
+					if (arg[j].contains("#"))
 						prologQuery += "'" + arg[j] + "', ";
 					else
 						prologQuery += "" + arg[j] + ", ";
 
-				} if (j + 1 == temp2.getExpressionsSize()) {
+				}
+				if (j + 1 == temp2.getExpressionsSize()) {
 					prologQuery = prologQuery.substring(0, prologQuery.length() - 2);
 				}
 
 			}
 			prologQuery += ")";
 
-			
-		//	System.out.println("prolog Query: "+prologQuery);
+			// System.out.println("prolog Query: "+prologQuery);
 
 			if (i + 1 == gl.getExpressionsSize()) {
 				sumOfPrologQuery += prologQuery + ".";
-			}else {
+			} else {
 				sumOfPrologQuery += prologQuery + ", ";
 			}
-			
 
 		}
-		//System.out.println("Trans to Prolog Query : \n"+sumOfPrologQuery);
+		// System.out.println("Trans to Prolog Query : \n"+sumOfPrologQuery);
 
 		Log.setQueryToProlog(sumOfPrologQuery);
 
 		time = System.currentTimeMillis();
-		
-		
-		
+
 		////////////////////////////////////////////////////// 추론 시작
 		Query q = new Query(sumOfPrologQuery);
-		//System.out.println("q in ReasoningQueryAction.java" + q);
+		// System.out.println("q in ReasoningQueryAction.java" + q);
 		while (q.hasMoreSolutions()) {
-			//System.out.println("hasSolution q name: " + q);
+			// System.out.println("hasSolution q name: " + q);
 			// 질의에 대한 결과가 있는 경우
 			String temp2 = temp;
 			Map<String, Term> s3 = q.nextSolution();
-			
-			//System.out.println("Map length :"+forVariable.length);
+
+			// System.out.println("Map length :"+forVariable.length);
 
 			for (int l = 0; l < forVariable.length; l++) {
-				
-				//System.out.println("forVariable[l] :" + forVariable[l]);
-				
+
+				// System.out.println("forVariable[l] :" + forVariable[l]);
+
 				if (forVariable[l].contains("$")) {
-					String variable = forVariable[l].substring(1);						
+					String variable = forVariable[l].substring(1);
 					String answer = s3.get(variable).toString();
-					
-					//System.out.println("answer :" + answer);
-					
+
+					// System.out.println("answer :" + answer);
+
 					answer = answer.replace("'", "\"");
 					if (!answer.contains("\""))
 						answer = "\"" + answer + "\"";
 					temp2 = temp2.replace("$" + variable, answer);
-				//	System.out.println("temp2" + temp2);
+					// System.out.println("temp2" + temp2);
 				}
 
 				// System.out.println(s3.toString());
 
 			}
-			
-			/*if(temp2.split("")) {
-				
-			}*/
+
+			/*
+			 * if(temp2.split("")) {
+			 * 
+			 * }
+			 */
 
 			// System.out.println(s3.toString());
-			/*if(temp2.split(" ").length==4) {
-				String exps[] = temp2.split(" ");
-				String predicate = exps[1].replace("(", "");
-				String param1 = exps[2].replace("\"", "'");
-				String param2 = exps[3].replace(")", "");
-				
-				String result=param1+","+predicate+","+param2+",highLevel";
-				System.out.println(result);
-				
-				assertTriple(param1+","+predicate+","+param2+",highLevel");
-			}*/
+			/*
+			 * if(temp2.split(" ").length==4) { String exps[] = temp2.split(" "); String
+			 * predicate = exps[1].replace("(", ""); String param1 = exps[2].replace("\"",
+			 * "'"); String param2 = exps[3].replace(")", "");
+			 * 
+			 * String result=param1+","+predicate+","+param2+",highLevel";
+			 * System.out.println(result);
+			 * 
+			 * assertTriple(param1+","+predicate+","+param2+",highLevel"); }
+			 */
 
 			queryResult += temp2 + "\n";
 
@@ -178,21 +177,23 @@ public class ReasoningQueryAction implements ActionBody {
 		time2 = System.currentTimeMillis();
 		Log.setReasoningTime(time2 - time);
 		Log.setQueryResult(queryResult);
-		//System.out.println("query result : " + queryResult);
+		// System.out.println("query result : " + queryResult);
 
-		if(!queryResult.equals("")) { 
-			//hwan//
-	        System.out.println("Result in ReasoningQueryAction" + queryResult.getClass().getName());	
-		    String[] array=queryResult.split("\\n");
-		   // System.out.println(array.length);	
-		    Random rand = new Random();   
-		    queryResult = array[rand.nextInt(array.length)];
+		if (!queryResult.equals("")) {
+			// hwan//
+			System.out.println("Result in ReasoningQueryAction" + queryResult.getClass().getName());
+			System.out.println("assigned inf check \n" + queryResult);
+			String[] array = queryResult.split("\\n");
+			// System.out.println(array.length);
+			if (!predicate.equals("isAssignedTo")&&!predicate.equals("preparationVertexForAssignedVertex")&&!predicate.equals("preCompareVertex")&&!predicate.equals("preparationVertex")) {
+				Random rand = new Random();
+				queryResult = array[rand.nextInt(array.length)];
+			}
 			ds.assertFact(queryResult);
 		}
-		
+
 		return queryResult;
 	}
-
 
 	public static String literalConversion(String s) {
 		if (s.contains("'")) {
@@ -231,20 +232,20 @@ public class ReasoningQueryAction implements ActionBody {
 
 		return s;
 	}
-	
+
 	public void assertTriple(String triple) {
 		triple = triple.replace(" ", ",");
-		Query.hasSolution("rdf_assert("+triple+")");
+		Query.hasSolution("rdf_assert(" + triple + ")");
 	}
-	
+
 	public void retractTriple(String triple) {
 		triple = triple.replace(" ", ",");
-		Query.hasSolution("rdf_retractall("+triple+")");
+		Query.hasSolution("rdf_retractall(" + triple + ")");
 	}
-	
+
 	public void updateTriple(String triple) {
 		triple = triple.replace(" ", ",");
-		Query.hasSolution("rdf_update("+triple+")");
+		Query.hasSolution("rdf_update(" + triple + ")");
 	}
 
 }

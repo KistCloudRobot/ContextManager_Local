@@ -11,8 +11,7 @@ import java.util.List;
 import org.jpl7.Query;
 
 import kgu.agent.demo.actionArgument.LatestPerceptionArgument;
-
-import kr.ac.uos.ai.arbi.agent.logger.ActionBody;
+import kr.ac.uos.ai.arbi.agent.logger.action.ActionBody;
 import kr.ac.uos.ai.arbi.model.GeneralizedList;
 import kr.ac.uos.ai.arbi.model.parser.GLParser;
 
@@ -113,6 +112,28 @@ public class LatestPerceptionAction implements ActionBody {
 		
 		//2022.07.11 CM - KGU Demo Code
 
+		// 2022.07.11 CM - KGU Demo Code
+		if (gl.getName().equals("stationAssignedBy")) {
+			String goal_id = gl.getExpression(0).asValue().stringValue();
+			String station = gl.getExpression(1).asValue().stringValue();
+
+			assertString = "'" + station
+					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://www.arbi.com/ontologies/arbi.owl#UnstoringTask'";
+
+			System.out.println("assign check : " + assertString);
+			assertTriple(assertString);
+
+		}
+		if (gl.getName().equals("stationReleasedFrom")) {
+			String goal_id = gl.getExpression(0).asValue().stringValue();
+			String station = gl.getExpression(1).asValue().stringValue();
+
+			assertString = "'" + station
+					+ "' 'http://knowrob.org/kb/knowrob.owl#isAssignedTo' 'http://www.arbi.com/ontologies/arbi.owl#UnstoringTask'";
+
+			System.out.println("released check : " + assertString);
+			retractTriple(assertString);
+		}
 		if (gl.getName().equals("RobotJointStates")) {
 			if (gl.getExpressionsSize() == 0)
 				return null;
