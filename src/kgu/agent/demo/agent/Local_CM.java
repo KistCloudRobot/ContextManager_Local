@@ -60,6 +60,8 @@ public class Local_CM extends ArbiAgent {
 	DataSource ds;
 	static int queryCount = 0;
 	int fakeTMQueryTime = 20;
+	
+	private int emptyStorintStationCount = 0;
 
 	public Local_CM(String brokerAddress, int brokerPort) {
 		this.brokerAddress = brokerAddress;
@@ -188,7 +190,7 @@ public class Local_CM extends ArbiAgent {
 		System.out.println("sender : " + sender);
 		System.out.println("queryGL : " + queryGL);
 		GeneralizedList gl = null;
-
+		
 		// sender == taskPolicyLearner then
 //		if (sender.contains("TaskPolicyLearner")) {
 //			System.out.println("!!!!");
@@ -234,6 +236,27 @@ public class Local_CM extends ArbiAgent {
 			e.printStackTrace();
 		}
 //			predicate = queryGL.split(" ")[1].replace("(", "");
+		
+		if(gl.getExpression(0).asGeneralizedList().getName().equals("emptyStoringStation" )) {
+			System.out.println("emptyStoringStation dummy query");
+			if(emptyStorintStationCount == 0) {
+				String queryResult = "(context (emptyStoringStation \"http://www.arbi.com/ontologies/arbi.owl#station20\"))";
+				emptyStorintStationCount += 1;
+				return queryResult;
+			} else if (emptyStorintStationCount == 1) {
+				String queryResult = "(context (emptyStoringStation \"http://www.arbi.com/ontologies/arbi.owl#station12\"))";
+				emptyStorintStationCount += 1;
+				return queryResult;
+			} else if (emptyStorintStationCount == 2) {
+				String queryResult = "(context (emptyStoringStation \"http://www.arbi.com/ontologies/arbi.owl#station10\"))";
+				emptyStorintStationCount += 1;
+				return queryResult;
+			} else if (emptyStorintStationCount == 3) {
+				String queryResult = "(context (emptyStoringStation \"http://www.arbi.com/ontologies/arbi.owl#station48\"))";
+				emptyStorintStationCount += 1;
+				return queryResult;
+			}
+		}
 		ReasoningQueryArgument rqArgument = new ReasoningQueryArgument(sender, queryGL);
 		ReasoningQueryAction action1 = new ReasoningQueryAction(ds);
 		reasoningAction = new AgentAction("ContextService", action1);
@@ -249,8 +272,8 @@ public class Local_CM extends ArbiAgent {
 		int brokerPort = 0;
 		if(args.length == 0) {
 //			brokerAddress = "127.0.0.1";
-			brokerAddress = "172.16.165.164";
-//			brokerAddress = "192.168.0.161";
+//			brokerAddress = "172.16.165.164";
+			brokerAddress = "192.168.100.11";
 
 //			brokerAddress = "tcp://192.168.100.10:61316";
 //			brokerAddress = "tcp://172.16.165.141:61316";
