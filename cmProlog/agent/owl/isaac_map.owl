@@ -219,7 +219,7 @@
 	    <rdf:type rdf:resource="&knowrob;Point3D"/>
 	    <rdf:type rdf:resource="&arbi;StoringStation"/>
 	    <rdf:type rdf:resource="&arbi;Station"/>
-	    <knowrob:xCoord rdf:dat atype="http://www.w3.org/2001/XMLSchema#double">26.4</knowrob:xCoord>
+	    <knowrob:xCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">26.4</knowrob:xCoord>
 	    <knowrob:yCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.2</knowrob:yCoord>
 	    <knowrob:zCoord rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</knowrob:zCoord>
 	   <knowrob:radius rdf:datatype="&xsd;double">10</knowrob:radius>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY knowrob "http://knowrob.org/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY arbi "http://www.arbi.com/ontologies/arbi.owl#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+	<!ENTITY srdl2-comp "http://knowrob.org/kb/srdl2-comp.owl#" >
+]>
+
+<rdf:RDF xmlns="http://knowrob.org/kb/ias_semantic_map.owl#"
+     xml:base="http://knowrob.org/kb/ias_semantic_map.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:arbi="http://www.arbi.com/ontologies/arbi_knowrob.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:srdl2-comp="http://knowrob.org/kb/srdl2-comp.owl#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#">
+    <owl:Ontology rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#">
+        <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+    </owl:Ontology>
+>
+
+
+	<!-- hubo -->
+
+
+	<!-- AMR_LIFT05 -->
+	<owl:NamedIndividual rdf:about="&arbi;AMR_LIFT5">
+		<rdf:type rdf:resource="&knowrob;Robot"/>	
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+		<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+		<knowrob:maxLoad rdf:datatype="&xsd;double">20</knowrob:maxLoad>	
+		<knowrob:waitvertex rdf:datatype="http://www.w3.org/2001/XMLSchema#double">143</knowrob:waitvertex>
+	</owl:NamedIndividual>
+	
+		<!-- AMR_LIFT06 -->
+	<owl:NamedIndividual rdf:about="&arbi;AMR_LIFT6">
+		<rdf:type rdf:resource="&knowrob;Robot"/>	
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+		<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+		<knowrob:maxLoad rdf:datatype="&xsd;double">20</knowrob:maxLoad>	
+		<knowrob:waitvertex rdf:datatype="http://www.w3.org/2001/XMLSchema#double">143</knowrob:waitvertex>
+	</owl:NamedIndividual>
+
+		<!-- AMR_LIFT07 -->
+	<owl:NamedIndividual rdf:about="&arbi;AMR_LIFT7">
+		<rdf:type rdf:resource="&knowrob;Robot"/>	
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+		<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+		<knowrob:maxLoad rdf:datatype="&xsd;double">20</knowrob:maxLoad>	
+		<knowrob:waitvertex rdf:datatype="http://www.w3.org/2001/XMLSchema#double">143</knowrob:waitvertex>
+	</owl:NamedIndividual>
+
+		<!-- Palletizer2 -->
+	<owl:NamedIndividual rdf:about="&arbi;Palletizer2">
+		<rdf:type rdf:resource="&knowrob;ManipulatingRobot"/>	
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+		<knowrob:maxLoad rdf:datatype="&xsd;double">20</knowrob:maxLoad>
+		<srdl2-comp:subComponent rdf:resource="&arbi;shoulderPanJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;shoulderLiftJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;elbowJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist1Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist2Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist3Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;gripper"/>
+	</owl:NamedIndividual>
+
+		<!-- Palletizer3 -->
+	<owl:NamedIndividual rdf:about="&arbi;Palletizer3">
+		<rdf:type rdf:resource="&knowrob;ManipulatingRobot"/>	
+		<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+		<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+		<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+		<knowrob:maxLoad rdf:datatype="&xsd;double">20</knowrob:maxLoad>
+		<srdl2-comp:subComponent rdf:resource="&arbi;shoulderPanJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;shoulderLiftJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;elbowJoint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist1Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist2Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;wrist3Joint"/>
+		<srdl2-comp:subComponent rdf:resource="&arbi;gripper"/>
+	</owl:NamedIndividual>
+	
+	
+
+<!-- Lift Joint -->
+
+	<owl:NamedIndividual rdf:about="&arbi;left_wheel_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&arbi;right_wheel_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<rdf:type rdf:resource="&srdl2-comp;R_wheelJoint"/>
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&arbi;left_swivel_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&arbi;left_caster_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&arbi;right_swivel_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:about="&arbi;right_caster_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+	</owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:about="&arbi;lift_joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<rdf:type rdf:resource="&srdl2-comp;Lifter"/>
+	</owl:NamedIndividual>		
+
+<!-- Palletizer Joint & Component -->
+
+	<owl:NamedIndividual rdf:about="&arbi;gripper">
+		<rdf:type rdf:resource="&knowrob;Gripper"/>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;shoulderPanJoint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">-1.16</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">-1.369</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">-1.373</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">-1.085</knowrob:postAttachRadius>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:about="&arbi;shoulderLiftJoint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">-1.354</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">-2.601</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">-2.698</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">-1.396</knowrob:postAttachRadius>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;elbowJoint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">-1.741</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">-2.488</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">-2.428</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">-2.351</knowrob:postAttachRadius>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;wrist1Joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">-1.07</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">0.55</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">0.586</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">-0.964</knowrob:postAttachRadius>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;wrist2Joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">1.347</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">1.535</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">1.536</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">1.571</knowrob:postAttachRadius>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="&arbi;wrist3Joint">
+		<rdf:type rdf:resource="&srdl2-comp;FixedUrdfJoint"/>
+		<knowrob:initRadius rdf:datatype="&xsd;double">0.347</knowrob:initRadius>
+		<knowrob:preAttachRadius rdf:datatype="&xsd;double">1.768</knowrob:preAttachRadius>
+		<knowrob:attachRadius rdf:datatype="&xsd;double">1.765</knowrob:attachRadius>
+		<knowrob:postAttachRadius rdf:datatype="&xsd;double">2.055</knowrob:postAttachRadius>
+	</owl:NamedIndividual>
+
+
+	
+</rdf:RDF>

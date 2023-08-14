@@ -3,7 +3,7 @@
 
 
 get_file_path(File, Path) :- source_file(Atom_Path), atom_string(Atom_Path, Path), sub_string(Path,B,L,A,File).
-:- get_file_path("cmProlog/prolog/init_i", Path), sub_string(Path,0,_,20,Dir), assert(root_directory_path(Dir)).
+:- get_file_path("cmProlog/prolog/init_p", Path), sub_string(Path,0,_,22,Dir), assert(root_directory_path(Dir)).
 :- root_directory_path(Dir), string_concat(Dir,"knowrob_library",T_Path), atom_string(Path, T_Path), asserta(library_directory(Path)), print(Path).
 :- root_directory_path(Dir), string_concat(Dir,"agent",T_Path), atom_string(Path, T_Path), asserta(library_directory(Path)).
 :- root_directory_path(Dir), string_concat(Dir,"matrix",T_Path), atom_string(Path, T_Path), asserta(library_directory(Path)).
@@ -53,8 +53,8 @@ get_file_path(File, Path) :- source_file(Atom_Path), atom_string(Atom_Path, Path
 :- use_module(library('prolog/arbi_convenient_service')).
 :- use_module(library('prolog/global_variable_social')).
 :- rdf_load(library(owl/isaac_semanticmap)).
-:- rdf_load(library(owl/isaac_robot_new)).
-:- rdf_load(library(owl/isaac_map_new)).
+:- rdf_load(library(owl/isaac_robot)).
+:- rdf_load(library(owl/isaac_map)).
 :- rdf_load(library(owl/isaac_object)).
 :- rdf_load(library(owl/arbi)).
 :- rdf_load(library(owl/arbi_comp_robotState)).

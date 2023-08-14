@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY knowrob "http://knowrob.org/kb/knowrob.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY arbi "http://www.arbi.com/ontologies/arbi.owl#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+	<!ENTITY srdl2-comp "http://knowrob.org/kb/srdl2-comp.owl#" >
+]>
+<rdf:RDF
+	xmlns="http://knowrob.org/kb/ias_semantic_map.owl#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:arbi="http://www.arbi.com/ontologies/arbi_knowrob.owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+	xmlns:srdl2-comp="http://knowrob.org/kb/srdl2-comp.owl#">
+
+<rdf:Description rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Classes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://knowrob.org/kb/ias_semantic_map.owl#BothHandObject -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#BothHandObject">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#HandObject"/>
+	<owl:disjointWith rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#OneAndBothHandObject"/>
+	<owl:disjointWith rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#OneHandObject"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/ias_semantic_map.owl#HandObject -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#HandObject">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/ias_semantic_map.owl#OneAndBothHandObject -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#OneAndBothHandObject">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#HandObject"/>
+	<owl:disjointWith rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#OneHandObject"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/ias_semantic_map.owl#OneHandObject -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/ias_semantic_map.owl#OneHandObject">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ias_semantic_map.owl#HandObject"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/knowrob.owl#Artifact -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#Artifact">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/knowrob.owl#ContainerArtifact -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#ContainerArtifact">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/knowrob.owl#DisplayShelf -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#DisplayShelf">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://knowrob.org/kb/knowrob.owl#Obstacle -->
+
+<rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#Obstacle">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Individuals -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.arbi.com/ontologies/arbi.owl#bakey -->
+
+
+
+<!--rack -->
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack21">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack22">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack23">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack24">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack25">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack26">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#rack27">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Rack"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_01">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_02">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_03">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_04">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_05">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_06">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_07">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>		
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_08">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_09">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_10">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#pallet_11">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Pallet"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">20</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_01">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_02">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_03">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_04">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_05">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_06">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_07">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_08">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_09">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_10">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_11">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_12">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_10">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>
+	
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_11">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_12">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_13">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_14">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_15">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_16">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_17">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_18">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_19">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#bin_20">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#box01">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#box02">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#box03">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#box04">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#box05">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">5.4177e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">6.9385e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton21">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton22">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton23">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton24">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton25">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton26">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton27">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton28">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton29">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton30">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton31">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton32">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton33">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton34">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton35">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton36">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton37">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton39">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<rdf:Description rdf:about="http://www.arbi.com/ontologies/arbi.owl#carton40">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Box"/>
+	<rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Artifact"/>
+	<knowrob:depthOfObject rdf:datatype="&xsd;double">2.80e-01</knowrob:depthOfObject>
+	<knowrob:widthOfObject rdf:datatype="&xsd;double">2.00e-01</knowrob:widthOfObject><!--1.1532e-1-->
+	<knowrob:heightOfObject rdf:datatype="&xsd;double">1.50e-01</knowrob:heightOfObject><!--9.1863e-2-->
+	<knowrob:massOfObject rdf:datatype="&xsd;double">5</knowrob:massOfObject>
+</rdf:Description>	
+
+<!--  -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
+</rdf:RDF>
